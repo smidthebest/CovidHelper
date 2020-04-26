@@ -9,6 +9,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -35,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FusedLocationProviderClient fusedLocationClient;
 
+    private RequestQueue queue;
     @Override
     public void onStart() {
         super.onStart();
@@ -57,9 +64,15 @@ public class MainActivity extends AppCompatActivity {
 
         //createNewUser("a@a.com", "a123456789");
         //signInUser("a@a.com", "a123456789");
+
+        // location
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         getLocation();
         // sign in with username and password
+
+        queue = Volley.newRequestQueue(this);
+        // http request
+        request("http://www.google.com");
     }
 
     public void getLocation(){
@@ -76,6 +89,25 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    public void request(String url){
+        //String url = "http://www.google.com";
+
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("response", response);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("response", error.toString());
+            }
+        });
+        queue.add(stringRequest);
     }
 
     public void createNewUser(String email, String password){
