@@ -535,7 +535,7 @@
                                         <constraint firstItem="c2a-bU-fRZ" firstAttribute="top" secondItem="khM-HD-LeP" secondAttribute="bottom" constant="8" id="BWX-BA-43Y"/>
                                         <constraint firstItem="c2a-bU-fRZ" firstAttribute="leading" secondItem="jlN-r0-jXZ" secondAttribute="leading" constant="10" id="Iud-4M-9Sv"/>
                                         <constraint firstItem="khM-HD-LeP" firstAttribute="top" secondItem="jlN-r0-jXZ" secondAttribute="top" constant="8" id="Lnu-YS-Hkw"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="2p9-O2-wrH" secondAttribute="trailing" constant="15" id="Xg7-1E-CtB"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2p9-O2-wrH" secondAttribute="trailing" constant="15" id="eG8-d2-Aa9"/>
                                         <constraint firstItem="lsS-po-5re" firstAttribute="top" secondItem="c2a-bU-fRZ" secondAttribute="bottom" constant="8" id="gVi-N9-no1"/>
                                         <constraint firstItem="khM-HD-LeP" firstAttribute="leading" secondItem="jlN-r0-jXZ" secondAttribute="leading" constant="10" id="m7j-5s-sTV"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="2p9-O2-wrH" secondAttribute="bottom" constant="6" id="uww-Fd-dbC"/>
@@ -550,14 +550,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Stores" id="fFA-pH-Efc"/>
-                    <navigationItem key="navigationItem" title="Restaurants" id="d3L-Xf-32e" userLabel="Stores">
-                        <barButtonItem key="leftBarButtonItem" image="icon_menu_24dp" id="bbA-NQ-Ohz">
-                            <color key="tintColor" red="0.84705882349999995" green="0.14117647059999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="menuBarButtonItem" destination="bbA-NQ-Ohz" id="klY-ZT-kPt"/>
+                        <outlet property="SearchBar" destination="Nyg-8g-lkD" id="f0R-9Q-ZJR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6w-bf-00u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -570,7 +565,6 @@
         <image name="burg" width="128" height="128"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="clear.fill" catalog="system" width="128" height="114"/>
-        <image name="icon_menu_24dp" width="128" height="128"/>
         <image name="icons100" width="128" height="128"/>
         <image name="loginBGCard" width="550.5" height="715.5"/>
         <image name="logo" width="225" height="225"/>

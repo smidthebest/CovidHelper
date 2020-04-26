@@ -5,19 +5,19 @@
 //  Created by Ankith on 4/26/20.
 //  Copyright © 2020 Arnav Reddy. All rights reserved.
 //
+import UIKit
 
-class StoreListingTableViewController: UITableViewController
-{
+
+class StoreListingTableViewController: UITableViewController {
     
     @IBOutlet weak var SearchBar: UISearchBar!
     
-    
     // empty array of stores
     
-    var storess = [Store]()
+    var stores = [Store]()
     
     
-    var filteredStoress = [Store]()
+    var filteredStores = [Store]()
     let activityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
@@ -54,7 +54,7 @@ class StoreListingTableViewController: UITableViewController
     {
         activityIndicatorView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         activityIndicatorView.center = tableView.center
-        activityIndicatorView.activityIndicatorViewStyle = .whiteLarge
+        activityIndicatorView.style = .whiteLarge
         activityIndicatorView.color = .red
         
         view.addSubview(activityIndicatorView)
@@ -71,24 +71,24 @@ class StoreListingTableViewController: UITableViewController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.identifier == "ShowMealsViewController" {
-        let mealsVC = segue.destination as! MealsViewController
+        if segue.identifier == "ShowGroceryViewController" {
+        let groceryVC = segue.destination as! GroceryViewController
             //should be "" empty string, not nil to avoid fatal error
         if SearchBar.text != "" {
-            mealsVC.restaurant =
-                self.filteredRestaurants[self.tableView.indexPathForSelectedRow!.row]
+            groceryVC.store =
+                self.filteredStores[self.tableView.indexPathForSelectedRow!.row]
         } else {
-            mealsVC.restaurant =
-            self.restaurants[self.tableView.indexPathForSelectedRow!.row]
+            groceryVC.store =
+            self.stores[self.tableView.indexPathForSelectedRow!.row]
         }
     }
 }
 
 }
 // Mark: UITableViewDataSource
-//implement UITableView data source
+// implement UITableView data source
 
-extension RestaurantListingTableViewController
+extension StoreListingTableViewController
 {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -96,29 +96,31 @@ extension RestaurantListingTableViewController
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //not empty thus filtered restos.
+        
         if SearchBar.text != "" {
-            return self.filteredRestaurants.count
+            return self.filteredStores.count
         }
         
-        return restaurants.count
+        return stores.count
     }
     
-    //fetch data
+    // fetch data
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreCell
         
-       // For FILTER Restaurants
-        var restaurant = self.restaurants[indexPath.row]
+       // FILTER for Stores
+        var store = self.stores[indexPath.row]
         
-        //search not empty
+        // search not empty
         if SearchBar.text != "" {
-            restaurant = self.filteredRestaurants[indexPath.row]
+            store = self.filteredStores[indexPath.row]
             
         }
         
-        cell.restaurant = restaurant
-        cell.selectionStyle = .none //disable grey selection
+        cell.store = store
+        // disable grey selection
+        cell.selectionStyle = .none
+        
         
         
         return cell
@@ -126,11 +128,11 @@ extension RestaurantListingTableViewController
 
 }
 
-extension RestaurantListingTableViewController : UISearchBarDelegate
+extension StoreListingTableViewController : UISearchBarDelegate
 {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredRestaurants = self.restaurants.filter({ (restaurant) -> Bool in
-            return restaurant.name?.lowercased().range(of: searchText.lowercased()) != nil
+        filteredStores = self.stores.filter({ (store) -> Bool in
+            return store.name?.lowercased().range(of: searchText.lowercased()) != nil
         })
         
         self.tableView.reloadData()

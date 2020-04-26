@@ -15,7 +15,7 @@ class Store {
     var logoURL: String?
     var phone: String?
     
-    func getStores() {
+    class func getStores(completion: @escaping ([Store]) -> Void) {
         
     }
     
