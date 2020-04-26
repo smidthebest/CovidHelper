@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -30,18 +33,13 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseUser currentUser;
     private FirebaseFirestore db;
 
+    private FusedLocationProviderClient fusedLocationClient;
+
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
 
-        mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
 
-        //createNewUser("a@a.com", "a123456789");
-        signInUser("a@a.com", "a123456789");
     }
 
     @Override
@@ -49,7 +47,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+
+
+        // Check if user is signed in (non-null) and update UI accordingly.
+        currentUser = mAuth.getCurrentUser();
+        //updateUI(currentUser);
+
+        //createNewUser("a@a.com", "a123456789");
+        //signInUser("a@a.com", "a123456789");
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        getLocation();
         // sign in with username and password
+    }
+
+    public void getLocation(){
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location location) {
+                        // Got last known location. In some rare situations this can be null.
+                        if (location != null) {
+                            // Logic to handle location object
+                            Log.d("location", location.toString());
+                        } else {
+                            Log.d("location", "no location");
+                        }
+                    }
+                });
     }
 
     public void createNewUser(String email, String password){
