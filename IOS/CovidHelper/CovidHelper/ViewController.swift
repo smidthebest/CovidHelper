@@ -5,7 +5,6 @@
 //  Created by Arnav Reddy on 3/13/20.
 //  Copyright © 2020 Arnav Reddy2. All rights reserved.
 //
-
 import UIKit
 import Firebase
 
@@ -20,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: LoginTextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
+    let db = Firestore.firestore()
+    
     var effect: UIVisualEffect!
     var viewCount = 0
     var count = 0
@@ -66,6 +67,22 @@ class ViewController: UIViewController {
             let email = Auth.auth().currentUser?.email
             print(email, "signed in")
             print(uid)
+            
+            let docRef = db.collection("customers").document(email ?? "")
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    print("I'm a customer")
+                    let CustomerMenuTab = self.storyboard?.instantiateViewController(withIdentifier: "CustomerSegue") as! CustomerMenuTab
+                    
+                    self.present(CustomerMenuTab, animated: true, completion: nil)
+                } else {
+                    print("I'm a volunteer")
+                    let VolunteerMenuTab = self.storyboard?.instantiateViewController(withIdentifier: "VolunteerSegue") as! VolunteerMenuTab
+                    
+                    self.present(VolunteerMenuTab, animated: true, completion: nil)
+                }
+            }
+
             //performSegue(withIdentifier: "loginToPickerSegue", sender: email)
         } else {
             print("no user signed in")
@@ -81,7 +98,6 @@ class ViewController: UIViewController {
 
             //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
             //tap.cancelsTouchesInView = false
-
             view.addGestureRecognizer(tap)
         }
 
@@ -97,9 +113,20 @@ class ViewController: UIViewController {
             guard let `self` = self else { return }
             var message: String = ""
             if (success) {
-                //return ("Account does not exist", false)
-                // if sign in is successful
-                self.performSegue(withIdentifier: "loginToPickerSegue", sender: email)
+                let docRef = self.db.collection("customers").document(email ?? "")
+                docRef.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        print("I'm a customer")
+                        let CustomerMenuTabC = self.storyboard?.instantiateViewController(withIdentifier: "CustomerSegue") as! CustomerMenuTab
+                        
+                        self.present(CustomerMenuTabC, animated: true, completion: nil)
+                    } else {
+                        print("I'm a volunteer")
+                        let VolunteerMenuTabC = self.storyboard?.instantiateViewController(withIdentifier: "VolunteerSegue") as! VolunteerMenuTab
+                        
+                        self.present(VolunteerMenuTabC, animated: true, completion: nil)
+                    }
+                }
             } else {
                 //return ("Account does not exist", true)
                 //booloo = true
@@ -196,4 +223,3 @@ extension UIButton {
     setAttributedTitle(titleString, for: .normal)
   }
 }
-

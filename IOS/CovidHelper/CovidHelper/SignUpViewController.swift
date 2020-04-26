@@ -5,13 +5,13 @@
 //  Created by Arnav Reddy on 3/13/20.
 //  Copyright © 2020 Arnav Reddy2. All rights reserved.
 //
-
 import UIKit
 import Firebase
 
 @IBDesignable
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var userTypeControl: UISegmentedControl!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var errMsgField: UILabel!
     @IBOutlet var errorView: UIView!
@@ -62,7 +62,6 @@ class SignUpViewController: UIViewController {
 
             //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
             //tap.cancelsTouchesInView = false
-
             view.addGestureRecognizer(tap)
         }
 
@@ -79,11 +78,27 @@ class SignUpViewController: UIViewController {
                 if (success) {
                     //let obj = self.storyboard?.instantiateViewController(withIdentifier: "onboardingViewController") as! onboardingViewController
                     //self.navigationController?.pushViewController(obj, animated: true)
-                    let userDocument = self.db.collection("users").document(email)
-                    userDocument.collection("messages")
+                    let index = self.userTypeControl.selectedSegmentIndex;
+                    print(index, "<- index")
+                    var str = "customers"
+                    if(index == 1){
+                        str = "volunteers"
+                    }
+                    let userDocument = self.db.collection(str).document(email)
+                    //userDocument.collection("messages")
                     userDocument.setData([
                         "name": email
                     ])
+                    if(index == 0){
+                        let CustomerMenuTab = self.storyboard?.instantiateViewController(withIdentifier: "SUCustomerSegue") as! CustomerMenuTab
+                       
+                        self.present(CustomerMenuTab, animated: true, completion: nil)
+                    }
+                    else{
+                        let VolunteerMenuTab = self.storyboard?.instantiateViewController(withIdentifier: "SUVolunteerSegue") as! VolunteerMenuTab
+                        
+                        self.present(VolunteerMenuTab, animated: true, completion: nil)
+                    }
                     //self.performSegue(withIdentifier: "onboardSegue", sender: email)
                 } else {
                     self.animateIn(errMsg: "Account already in use")
@@ -141,4 +156,3 @@ class SignUpViewController: UIViewController {
     }
     
 }
-

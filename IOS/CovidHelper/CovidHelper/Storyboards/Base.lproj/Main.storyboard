@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j4s-Th-yXu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j4s-Th-yXu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,14 +35,14 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFC-le-q8Y">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="km9-Eo-cTt">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="km9-Eo-cTt">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UxO-Iq-5wd">
                                             <rect key="frame" x="0.0" y="0.0" width="174" height="768"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vQL-io-9bH">
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="vQL-io-9bH">
                                                 <rect key="frame" x="0.0" y="0.0" width="174" height="768"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
@@ -89,6 +89,15 @@
                                 <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HBa-F5-tNh">
+                                <rect key="frame" x="87" y="515" width="240" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Customer"/>
+                                    <segment title="Volunteer"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.33283390410000002" green="0.5820410077" blue="0.79426663649999996" alpha="0.5976027397" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HrO-qB-rfx">
                                 <rect key="frame" x="87" y="450" width="240" height="50"/>
                                 <color key="backgroundColor" red="0.61176470589999998" green="0.75686274509999996" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -132,13 +141,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="nib-17-tPq"/>
                     <connections>
-                        <outlet property="doneButton" destination="rHW-Qs-bTb" id="yFO-v2-fVz"/>
+                        <outlet property="doneButton" destination="rHW-Qs-bTb" id="rW3-Hj-zeU"/>
                         <outlet property="effectView" destination="yFC-le-q8Y" id="g25-7z-LjO"/>
-                        <outlet property="errMsgField" destination="BQv-BX-2a1" id="a9u-Jk-oh5"/>
-                        <outlet property="errorView" destination="R1u-lB-BJq" id="uMm-uS-0Oe"/>
-                        <outlet property="passwordTextField" destination="pnu-8E-UKZ" id="RVy-Ro-lyR"/>
-                        <outlet property="signupButton" destination="HrO-qB-rfx" id="NE5-Ks-kh3"/>
-                        <outlet property="usernameTextField" destination="9BH-dU-zQV" id="Vv5-yE-Wxx"/>
+                        <outlet property="errMsgField" destination="BQv-BX-2a1" id="xff-rg-X3q"/>
+                        <outlet property="errorView" destination="R1u-lB-BJq" id="lGa-Lh-zrb"/>
+                        <outlet property="passwordTextField" destination="pnu-8E-UKZ" id="LeR-Lg-4en"/>
+                        <outlet property="signupButton" destination="HrO-qB-rfx" id="Ofj-lc-0Qc"/>
+                        <outlet property="userTypeControl" destination="HBa-F5-tNh" id="qHL-d8-fgb"/>
+                        <outlet property="usernameTextField" destination="9BH-dU-zQV" id="LNa-a1-Rsj"/>
+                        <segue destination="Ouz-jr-wRt" kind="show" identifier="SUCustomerSegue" id="JlU-Sd-kUN"/>
+                        <segue destination="M5Q-Oi-GUc" kind="show" identifier="SUVolunteerSegue" id="eci-En-fmL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nh9-vI-i1m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -189,7 +201,7 @@
                     <viewLayoutGuide key="safeArea" id="yC9-0r-bBk"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1306" y="888"/>
+            <point key="canvasLocation" x="2548" y="867"/>
         </scene>
         <!--Sign In-->
         <scene sceneID="QvG-bl-6O1">
@@ -219,14 +231,14 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUa-dY-uXx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="paX-Bi-8LH">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="paX-Bi-8LH">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCZ-m4-eOR">
                                             <rect key="frame" x="0.0" y="0.0" width="406" height="896"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bRq-ZU-QKw">
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="bRq-ZU-QKw">
                                                 <rect key="frame" x="0.0" y="0.0" width="406" height="896"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
@@ -322,14 +334,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="BGm-oD-7TE"/>
                     <connections>
-                        <outlet property="doneButton" destination="IsX-Kv-Yu1" id="vjn-c2-cFP"/>
-                        <outlet property="effectView" destination="uUa-dY-uXx" id="kij-p6-hEb"/>
-                        <outlet property="errMsgField" destination="2Yi-BA-xVn" id="EDm-SR-A0a"/>
-                        <outlet property="errorView" destination="yFm-FM-LDs" id="W7z-vg-yzQ"/>
-                        <outlet property="loginButton" destination="qR9-5E-fXc" id="7vB-L6-ubP"/>
-                        <outlet property="passwordTextField" destination="l9a-hY-IeD" id="qqM-ep-2zG"/>
-                        <outlet property="signUpButton" destination="1SA-DS-9yp" id="hcX-4r-hdR"/>
-                        <outlet property="usernameTextField" destination="qfN-rZ-iu1" id="cZy-7B-ckE"/>
+                        <outlet property="doneButton" destination="IsX-Kv-Yu1" id="a5z-a4-XCH"/>
+                        <outlet property="effectView" destination="eCZ-m4-eOR" id="7Yi-M5-OiR"/>
+                        <outlet property="errMsgField" destination="2Yi-BA-xVn" id="wNU-ao-H53"/>
+                        <outlet property="errorView" destination="yFm-FM-LDs" id="bW1-7y-Nz4"/>
+                        <outlet property="loginButton" destination="qR9-5E-fXc" id="8MS-ei-iA7"/>
+                        <outlet property="passwordTextField" destination="l9a-hY-IeD" id="2Gy-jV-hX1"/>
+                        <outlet property="signUpButton" destination="1SA-DS-9yp" id="D4K-Gp-vTf"/>
+                        <outlet property="usernameTextField" destination="qfN-rZ-iu1" id="DeQ-O2-Wk4"/>
+                        <segue destination="Ouz-jr-wRt" kind="show" identifier="CustomerSegue" id="xHB-VL-CrU"/>
+                        <segue destination="M5Q-Oi-GUc" kind="show" identifier="VolunteerSegue" id="A3s-06-cvt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJQ-px-FU3" sceneMemberID="firstResponder"/>
@@ -380,14 +394,14 @@
                     <viewLayoutGuide key="safeArea" id="3zt-zZ-mzO"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1306" y="-29"/>
+            <point key="canvasLocation" x="2548" y="-317"/>
         </scene>
         <!--Orders-->
         <scene sceneID="z4S-um-Nc5">
             <objects>
                 <viewController id="mBj-ve-ldB" customClass="OrderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IQl-dB-MFi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="l3k-Mh-kvn"/>
@@ -403,7 +417,7 @@
             <objects>
                 <viewController storyboardIdentifier="Cart" id="LlM-QG-yCh" customClass="CartViewController" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bpO-F2-w2w">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="GIR-sg-rZj"/>
@@ -418,6 +432,7 @@
         <scene sceneID="Sz8-6X-uaq">
             <objects>
                 <tabBarController storyboardIdentifier="CustomerMenuTab" id="Ouz-jr-wRt" customClass="CustomerMenuTab" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ovO-lm-HaV"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L3i-Ru-EfN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -438,7 +453,7 @@
             <objects>
                 <viewController id="idy-xS-0Dc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aC8-n6-hqc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Kjd-tG-8R9"/>
@@ -454,7 +469,7 @@
             <objects>
                 <viewController id="u4a-Fc-xrX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HKI-Eb-yTh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="sMT-OY-KLx"/>
@@ -469,6 +484,7 @@
         <scene sceneID="Gqi-Ik-TJr">
             <objects>
                 <tabBarController id="M5Q-Oi-GUc" customClass="VolunteerMenuTab" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cjc-xF-F2R"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ApH-0H-djs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -488,7 +504,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="Stores" id="ybt-80-GX2" userLabel="Stores" customClass="StoreListingTableViewController" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Zh-YG-hRU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search for stores" id="Nyg-8g-lkD">
@@ -563,11 +579,15 @@
     <resources>
         <image name="bgLogin" width="621" height="1104"/>
         <image name="burg" width="128" height="128"/>
-        <image name="cart" catalog="system" width="128" height="102"/>
-        <image name="clear.fill" catalog="system" width="128" height="114"/>
+        <image name="cart" catalog="system" width="64" height="50"/>
+        <image name="clear.fill" catalog="system" width="64" height="56"/>
         <image name="icons100" width="128" height="128"/>
         <image name="loginBGCard" width="550.5" height="715.5"/>
         <image name="logo" width="225" height="225"/>
         <image name="logoWName" width="458" height="426"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eci-En-fmL"/>
+        <segue reference="JlU-Sd-kUN"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+import Foundation
+import UIKit
+
+class VolunteerMenuTab: UITabBarController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+
