@@ -1,13 +1,14 @@
 //
 //  AppDelegate.swift
-//  CovidHelper
+//  LoginASL
 //
-//  Created by Arnav Reddy on 4/25/20.
-//  Copyright © 2020 Arnav Reddy. All rights reserved.
+//  Created by Arnav Reddy on 3/13/20.
+//  Copyright © 2020 Arnav Reddy2. All rights reserved.
 //
 
 import UIKit
 import CoreData
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 
