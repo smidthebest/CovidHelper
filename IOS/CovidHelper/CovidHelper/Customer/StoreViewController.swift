@@ -6,28 +6,25 @@
 //  Copyright © 2020 Arnav Reddy. All rights reserved.
 //
 
-import UIKit
-class StoreListingViewController: UITableViewController {
+class StoreListingTableViewController: UITableViewController
+{
     
     @IBOutlet weak var SearchBar: UISearchBar!
     
-    @IBOutlet weak var menuBarButtonItem: UIBarButtonItem!
     
-    //empty array of stores
-    var stores = [Store]()
+    // empty array of stores
+    
+    var storess = [Store]()
     
     
-    var filteredStores = [Store]()
+    var filteredStoress = [Store]()
     let activityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menuBarButtonItem.target = self.revealViewController()
-        menuBarButtonItem.action = #selector(SWRevealViewController.revealToggle(_: ))
+        // tell search bar this class is delegate
         
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-    //tell search bar this class is delegate
         SearchBar.delegate = self
         
         getStores()
@@ -35,8 +32,9 @@ class StoreListingViewController: UITableViewController {
     }
     
     
-    //fetch data
-    func getStores() {
+    // fetch data
+    func getStores()
+    {
         showActivityIndicator()
         
         Store.getStores { (stores) in
@@ -52,7 +50,8 @@ class StoreListingViewController: UITableViewController {
     
     // MARK: - Activity Indicator method
     
-    func showActivityIndicator() {
+    func showActivityIndicator()
+    {
         activityIndicatorView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         activityIndicatorView.center = tableView.center
         activityIndicatorView.activityIndicatorViewStyle = .whiteLarge
@@ -62,23 +61,25 @@ class StoreListingViewController: UITableViewController {
         activityIndicatorView.startAnimating()
     }
     
-    func hideActivityIndicator() {
+    func hideActivityIndicator()
+    {
         activityIndicatorView.stopAnimating()
         activityIndicatorView.removeFromSuperview()
     }
     
     // Mark: Navigation
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowGroceriesViewController" {
-        let groceriesVC = segue.destination as! GroceriesViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "ShowMealsViewController" {
+        let mealsVC = segue.destination as! MealsViewController
             //should be "" empty string, not nil to avoid fatal error
         if SearchBar.text != "" {
-            groceriesVC.store =
-                self.filteredStores[self.tableView.indexPathForSelectedRow!.row]
+            mealsVC.restaurant =
+                self.filteredRestaurants[self.tableView.indexPathForSelectedRow!.row]
         } else {
-            groceriesVC.store =
-            self.stores[self.tableView.indexPathForSelectedRow!.row]
+            mealsVC.restaurant =
+            self.restaurants[self.tableView.indexPathForSelectedRow!.row]
         }
     }
 }
@@ -86,7 +87,9 @@ class StoreListingViewController: UITableViewController {
 }
 // Mark: UITableViewDataSource
 //implement UITableView data source
-extension StoreListingViewController {
+
+extension RestaurantListingTableViewController
+{
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -95,26 +98,26 @@ extension StoreListingViewController {
         
         //not empty thus filtered restos.
         if SearchBar.text != "" {
-            return self.filteredStores.count
+            return self.filteredRestaurants.count
         }
         
-        return stores.count
+        return restaurants.count
     }
     
     //fetch data
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantCell
         
-       // For FILTER Stores
-        var store = self.stores[indexPath.row]
+       // For FILTER Restaurants
+        var restaurant = self.restaurants[indexPath.row]
         
         //search not empty
         if SearchBar.text != "" {
-            store = self.filteredStores[indexPath.row]
+            restaurant = self.filteredRestaurants[indexPath.row]
             
         }
         
-        cell.store = store
+        cell.restaurant = restaurant
         cell.selectionStyle = .none //disable grey selection
         
         
@@ -123,11 +126,11 @@ extension StoreListingViewController {
 
 }
 
-extension StoreListingViewController : UISearchBarDelegate
+extension RestaurantListingTableViewController : UISearchBarDelegate
 {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredStores = self.stores.filter({ (store) -> Bool in
-            return store.name?.lowercased().range(of: searchText.lowercased()) != nil
+        filteredRestaurants = self.restaurants.filter({ (restaurant) -> Bool in
+            return restaurant.name?.lowercased().range(of: searchText.lowercased()) != nil
         })
         
         self.tableView.reloadData()
@@ -137,4 +140,3 @@ extension StoreListingViewController : UISearchBarDelegate
         searchBar.resignFirstResponder()
     }
 }
-

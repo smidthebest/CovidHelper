@@ -7,7 +7,6 @@ target 'CovidHelper' do
 
   # Pods for CovidHelper
   pod 'Alamofire'
-  pod 'SwiftyJSON'
   pod 'FirebaseUI/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
