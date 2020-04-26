@@ -14,6 +14,7 @@
 		7C313C1924550D5300D89621 /* CovidHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C313C1724550D5300D89621 /* CovidHelper.xcdatamodeld */; };
 		7C313C1B24550D5300D89621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C313C1A24550D5300D89621 /* Assets.xcassets */; };
 		7C313C1E24550D5300D89621 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C313C1C24550D5300D89621 /* LaunchScreen.storyboard */; };
+		7C313C262455158900D89621 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C313C252455158900D89621 /* GoogleService-Info (1).plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7C313C1A24550D5300D89621 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C313C1D24550D5300D89621 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C313C1F24550D5300D89621 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C313C252455158900D89621 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				7C313C1A24550D5300D89621 /* Assets.xcassets */,
 				7C313C1C24550D5300D89621 /* LaunchScreen.storyboard */,
 				7C313C1F24550D5300D89621 /* Info.plist */,
+				7C313C252455158900D89621 /* GoogleService-Info (1).plist */,
 				7C313C1724550D5300D89621 /* CovidHelper.xcdatamodeld */,
 			);
 			path = CovidHelper;
@@ -131,6 +134,7 @@
 				7C313C1E24550D5300D89621 /* LaunchScreen.storyboard in Resources */,
 				7C313C1B24550D5300D89621 /* Assets.xcassets in Resources */,
 				7C313C1624550D5300D89621 /* Main.storyboard in Resources */,
+				7C313C262455158900D89621 /* GoogleService-Info (1).plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
