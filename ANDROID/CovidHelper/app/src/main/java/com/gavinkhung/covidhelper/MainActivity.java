@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Arrays;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
+    private FirebaseFirestore db;
 
     @Override
     public void onStart() {
@@ -34,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         currentUser = mAuth.getCurrentUser();
         //updateUI(currentUser);
+
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+
+        //createNewUser("a@a.com", "a123456789");
+        signInUser("a@a.com", "a123456789");
     }
 
     @Override
@@ -41,21 +49,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mAuth = FirebaseAuth.getInstance();
-
-
-
         // sign in with username and password
-
-        /*
-        // post data
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        CollectionReference cities = db.collection("cities");
-        Map<String, Object> data1 = new HashMap<>();
-        data1.put("population", 860000);
-        data1.put("regions", Arrays.asList("west_coast", "norcal"));
-        cities.document("SF").set(data1);
-         */
     }
 
     public void createNewUser(String email, String password){
@@ -106,5 +100,86 @@ public class MainActivity extends AppCompatActivity {
 
     public void signOutUser(){
         FirebaseAuth.getInstance().signOut();
+    }
+
+    public void createDocument(){
+        Map<String, Object> city = new HashMap<>();
+        city.put("name", "Los Angeles");
+        city.put("state", "CA");
+        city.put("country", "USA");
+
+        db.collection("cities").document("LA")
+                .set(city)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("TAG", "DocumentSnapshot successfully written!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("TAG", "Error writing document", e);
+                    }
+                });
+    }
+
+    public void readDocument(){
+        DocumentReference docRef = db.collection("cities").document("SF");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d("TAG", "DocumentSnapshot data: " + document.getData());
+                    } else {
+                        Log.d("TAG", "No such document");
+                    }
+                } else {
+                    Log.d("TAG", "get failed with ", task.getException());
+                }
+            }
+        });
+    }
+
+    // this updates one field without overwriting the document
+    public void updateField(){
+        DocumentReference washingtonRef = db.collection("cities").document("DC");
+        washingtonRef
+                .update("capital", true,
+                        "age", 13,
+                        "favorites.color", "Red")
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("TAG", "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("TAG", "Error updating document", e);
+                    }
+                });
+
+    }
+
+    public void deleteDocument(){
+        db.collection("cities").document("DC")
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("TAG", "DocumentSnapshot successfully deleted!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("TAG", "Error deleting document", e);
+                    }
+                });
+
     }
 }
