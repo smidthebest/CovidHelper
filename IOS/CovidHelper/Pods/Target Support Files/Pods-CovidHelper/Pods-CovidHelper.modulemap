@@ -1,0 +1,6 @@
+module Pods_CovidHelper {
+  umbrella header "Pods-CovidHelper-umbrella.h"
+
+  export *
+  module * { export * }
+}

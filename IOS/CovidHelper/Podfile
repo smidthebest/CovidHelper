@@ -6,6 +6,8 @@ target 'CovidHelper' do
   #use_frameworks!
 
   # Pods for CovidHelper
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
   pod 'FirebaseUI/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'

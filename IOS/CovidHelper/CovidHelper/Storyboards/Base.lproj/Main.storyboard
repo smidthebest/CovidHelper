@@ -385,7 +385,7 @@
         <!--Item 2-->
         <scene sceneID="z4S-um-Nc5">
             <objects>
-                <viewController id="mBj-ve-ldB" sceneMemberID="viewController">
+                <viewController id="mBj-ve-ldB" customClass="OrderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IQl-dB-MFi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -401,7 +401,7 @@
         <!--Item 1-->
         <scene sceneID="adf-dU-Ep0">
             <objects>
-                <viewController id="LlM-QG-yCh" sceneMemberID="viewController">
+                <viewController id="LlM-QG-yCh" customClass="CartViewController" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bpO-F2-w2w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
