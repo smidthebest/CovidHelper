@@ -1,13 +1,10 @@
 var express = require("express"); 
 var app = express(); 
 
-let db = require("./dbConnect.js"); 
-db.setUpDB(); 
-var data = db.getDb(); 
+var contr = require("./volunteerController.js"); 
+contr.getVolunteers(); 
 
-db.getVolunteers(data); 
-
-app.get("/", function(req, res){
-
+app.post("/request", function(req, res){
+    
 }); 
 
