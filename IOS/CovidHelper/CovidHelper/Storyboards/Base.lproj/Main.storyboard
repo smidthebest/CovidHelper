@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j4s-Th-yXu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j4s-Th-yXu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,14 +35,14 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFC-le-q8Y">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="km9-Eo-cTt">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="km9-Eo-cTt">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UxO-Iq-5wd">
                                             <rect key="frame" x="0.0" y="0.0" width="174" height="768"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="vQL-io-9bH">
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vQL-io-9bH">
                                                 <rect key="frame" x="0.0" y="0.0" width="174" height="768"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
@@ -55,7 +55,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9BH-dU-zQV" customClass="LoginTextField" customModule="LoginASL" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9BH-dU-zQV" customClass="LoginTextField" customModule="CovidHelper" customModuleProvider="target">
                                 <rect key="frame" x="87" y="355" width="240" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="05V-k3-aVu"/>
@@ -71,7 +71,7 @@
                                 <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pnu-8E-UKZ" customClass="LoginTextField" customModule="LoginASL" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pnu-8E-UKZ" customClass="LoginTextField" customModule="CovidHelper" customModuleProvider="target">
                                 <rect key="frame" x="87" y="397" width="240" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="7Xi-jo-aun"/>
@@ -194,7 +194,7 @@
         <!--Sign In-->
         <scene sceneID="QvG-bl-6O1">
             <objects>
-                <viewController id="j4s-Th-yXu" customClass="ViewController" customModule="LoginASL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j4s-Th-yXu" customClass="ViewController" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ke2-4C-hvB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,14 +219,14 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUa-dY-uXx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="paX-Bi-8LH">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="paX-Bi-8LH">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCZ-m4-eOR">
                                             <rect key="frame" x="0.0" y="0.0" width="406" height="896"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="bRq-ZU-QKw">
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bRq-ZU-QKw">
                                                 <rect key="frame" x="0.0" y="0.0" width="406" height="896"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
@@ -239,7 +239,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qfN-rZ-iu1" customClass="LoginTextField" customModule="LoginASL" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qfN-rZ-iu1" customClass="LoginTextField" customModule="CovidHelper" customModuleProvider="target">
                                 <rect key="frame" x="87" y="392" width="240" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="xbe-bm-HC4"/>
@@ -254,7 +254,7 @@
                                 <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9a-hY-IeD" customClass="LoginTextField" customModule="LoginASL" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9a-hY-IeD" customClass="LoginTextField" customModule="CovidHelper" customModuleProvider="target">
                                 <rect key="frame" x="87" y="431" width="240" height="37.5"/>
                                 <color key="textColor" red="0.70980392160000005" green="0.41960784309999999" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -275,6 +275,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginPressed:" destination="j4s-Th-yXu" eventType="touchUpInside" id="bTY-t7-OQF"/>
+                                    <action selector="loginTappedWith_sender:" destination="j4s-Th-yXu" eventType="touchUpInside" id="zgC-mO-Ypm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SA-DS-9yp">
@@ -381,10 +382,60 @@
             </objects>
             <point key="canvasLocation" x="1306" y="-29"/>
         </scene>
+        <!--Item 2-->
+        <scene sceneID="z4S-um-Nc5">
+            <objects>
+                <viewController id="mBj-ve-ldB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IQl-dB-MFi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="l3k-Mh-kvn"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="SDK-W0-ZF5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7lM-vW-DKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3048" y="295"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="adf-dU-Ep0">
+            <objects>
+                <viewController id="LlM-QG-yCh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bpO-F2-w2w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="GIR-sg-rZj"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="kmC-Ig-oyD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ITH-5C-5hi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3048" y="-366"/>
+        </scene>
+        <!--Customer Menu Tab-->
+        <scene sceneID="Sz8-6X-uaq">
+            <objects>
+                <tabBarController storyboardIdentifier="CustomerMenuTab" id="Ouz-jr-wRt" customClass="CustomerMenuTab" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L3i-Ru-EfN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="LlM-QG-yCh" kind="relationship" relationship="viewControllers" id="fE7-Ae-6rS"/>
+                        <segue destination="mBj-ve-ldB" kind="relationship" relationship="viewControllers" id="Gyi-JT-yhT"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DlS-DE-RfN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2064" y="-29"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bgLogin" width="621" height="1104"/>
-        <image name="clear.fill" catalog="system" width="64" height="56"/>
+        <image name="clear.fill" catalog="system" width="128" height="114"/>
         <image name="loginBGCard" width="550.5" height="715.5"/>
         <image name="logo" width="225" height="225"/>
         <image name="logoWName" width="458" height="426"/>

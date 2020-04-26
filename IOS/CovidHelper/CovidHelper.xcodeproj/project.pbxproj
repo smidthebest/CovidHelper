@@ -18,6 +18,7 @@
 		7C313C262455158900D89621 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C313C252455158900D89621 /* GoogleService-Info.plist */; };
 		7C51B8D32455195D008B8EF3 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C51B8D22455195D008B8EF3 /* LoginTextField.swift */; };
 		7C51B8D5245519BC008B8EF3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C51B8D4245519BC008B8EF3 /* SignUpViewController.swift */; };
+		B2781B8F245532EA000C47AD /* CustomerMenuTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2781B8E245532EA000C47AD /* CustomerMenuTab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		7C51B8D22455195D008B8EF3 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		7C51B8D4245519BC008B8EF3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		971268C7634AAF11F5E542EA /* libPods-CovidHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CovidHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2781B8E245532EA000C47AD /* CustomerMenuTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMenuTab.swift; sourceTree = "<group>"; };
 		F0707BFD24045FB4691BDDB0 /* Pods-CovidHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidHelper.debug.xcconfig"; path = "Target Support Files/Pods-CovidHelper/Pods-CovidHelper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,19 +81,36 @@
 		7C313C0D24550D5300D89621 /* CovidHelper */ = {
 			isa = PBXGroup;
 			children = (
-				7C313C1424550D5300D89621 /* Main.storyboard */,
-				7C313C1224550D5300D89621 /* ViewController.swift */,
-				7C51B8D4245519BC008B8EF3 /* SignUpViewController.swift */,
+				B2781B8724552B53000C47AD /* Storyboards */,
+				B2781B8624552B37000C47AD /* View Controllers */,
 				7C51B8D22455195D008B8EF3 /* LoginTextField.swift */,
+				7C313C1024550D5300D89621 /* SceneDelegate.swift */,
+				7C313C0E24550D5300D89621 /* AppDelegate.swift */,
 				7C313C1A24550D5300D89621 /* Assets.xcassets */,
-				7C313C1C24550D5300D89621 /* LaunchScreen.storyboard */,
 				7C313C1F24550D5300D89621 /* Info.plist */,
 				7C313C252455158900D89621 /* GoogleService-Info.plist */,
 				7C313C1724550D5300D89621 /* CovidHelper.xcdatamodeld */,
-				7C313C1024550D5300D89621 /* SceneDelegate.swift */,
-				7C313C0E24550D5300D89621 /* AppDelegate.swift */,
 			);
 			path = CovidHelper;
+			sourceTree = "<group>";
+		};
+		B2781B8624552B37000C47AD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C51B8D4245519BC008B8EF3 /* SignUpViewController.swift */,
+				7C313C1224550D5300D89621 /* ViewController.swift */,
+				B2781B8E245532EA000C47AD /* CustomerMenuTab.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B2781B8724552B53000C47AD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7C313C1424550D5300D89621 /* Main.storyboard */,
+				7C313C1C24550D5300D89621 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		E8827191CA2C2D9C32F09F20 /* Pods */ = {
@@ -225,6 +244,7 @@
 				7C313C0F24550D5300D89621 /* AppDelegate.swift in Sources */,
 				7C313C1124550D5300D89621 /* SceneDelegate.swift in Sources */,
 				7C51B8D32455195D008B8EF3 /* LoginTextField.swift in Sources */,
+				B2781B8F245532EA000C47AD /* CustomerMenuTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
