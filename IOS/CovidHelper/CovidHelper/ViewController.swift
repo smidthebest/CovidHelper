@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: LoginTextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
+    let db = Firestore.firestore()
+    
     var effect: UIVisualEffect!
     var viewCount = 0
     var count = 0
@@ -66,6 +68,18 @@ class ViewController: UIViewController {
             let email = Auth.auth().currentUser?.email
             print(email, "signed in")
             print(uid)
+            
+            let docRef = db.collection("customers").document(email ?? "")
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    print("I'm a customer")
+                    //go to customers
+                } else {
+                    print("I'm a volunteer")
+                    //go to volunteer
+                }
+            }
+
             //performSegue(withIdentifier: "loginToPickerSegue", sender: email)
         } else {
             print("no user signed in")
@@ -97,9 +111,16 @@ class ViewController: UIViewController {
             guard let `self` = self else { return }
             var message: String = ""
             if (success) {
-                //return ("Account does not exist", false)
-                // if sign in is successful
-                self.performSegue(withIdentifier: "loginToPickerSegue", sender: email)
+                let docRef = self.db.collection("customers").document(email ?? "")
+                docRef.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        print("I'm a customer")
+                        //go to customers
+                    } else {
+                        print("I'm a volunteer")
+                        //go to volunteer
+                    }
+                }
             } else {
                 //return ("Account does not exist", true)
                 //booloo = true
