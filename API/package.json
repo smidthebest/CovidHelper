@@ -1,0 +1,32 @@
+{
+  "name": "covid-helper",
+  "version": "1.0.0",
+  "description": "Matches seniors with volunteers to help with daily tasks",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase-admin": "^8.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smidthebest/CovidHelper.git"
+  },
+  "keywords": [
+    "covid",
+    "nodejs",
+    "ios",
+    "android",
+    "marketplace"
+  ],
+  "author": "Siddhartha Mishra, Arnav Reddy, Gavin Hung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smidthebest/CovidHelper/issues"
+  },
+  "homepage": "https://github.com/smidthebest/CovidHelper#readme"
+}
