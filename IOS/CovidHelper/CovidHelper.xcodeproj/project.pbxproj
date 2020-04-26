@@ -18,6 +18,9 @@
 		7C313C262455158900D89621 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C313C252455158900D89621 /* GoogleService-Info.plist */; };
 		7C51B8D32455195D008B8EF3 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C51B8D22455195D008B8EF3 /* LoginTextField.swift */; };
 		7C51B8D5245519BC008B8EF3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C51B8D4245519BC008B8EF3 /* SignUpViewController.swift */; };
+		B2610FF724553C520031821D /* VolunteerMenuTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2610FF624553C520031821D /* VolunteerMenuTab.swift */; };
+		B2610FFB2455415F0031821D /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2610FFA2455415F0031821D /* Cart.swift */; };
+		B2610FFD245541690031821D /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2610FFC245541690031821D /* Orders.swift */; };
 		B2781B8F245532EA000C47AD /* CustomerMenuTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2781B8E245532EA000C47AD /* CustomerMenuTab.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +39,9 @@
 		7C51B8D22455195D008B8EF3 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		7C51B8D4245519BC008B8EF3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		971268C7634AAF11F5E542EA /* libPods-CovidHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CovidHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2610FF624553C520031821D /* VolunteerMenuTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerMenuTab.swift; sourceTree = "<group>"; };
+		B2610FFA2455415F0031821D /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		B2610FFC245541690031821D /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		B2781B8E245532EA000C47AD /* CustomerMenuTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMenuTab.swift; sourceTree = "<group>"; };
 		F0707BFD24045FB4691BDDB0 /* Pods-CovidHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidHelper.debug.xcconfig"; path = "Target Support Files/Pods-CovidHelper/Pods-CovidHelper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,12 +100,32 @@
 			path = CovidHelper;
 			sourceTree = "<group>";
 		};
+		B2610FF82455413C0031821D /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				B2781B8E245532EA000C47AD /* CustomerMenuTab.swift */,
+				B2610FFA2455415F0031821D /* Cart.swift */,
+				B2610FFC245541690031821D /* Orders.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		B2610FF92455414C0031821D /* Volunteer */ = {
+			isa = PBXGroup;
+			children = (
+				B2610FF624553C520031821D /* VolunteerMenuTab.swift */,
+			);
+			name = Volunteer;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		B2781B8624552B37000C47AD /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B2610FF92455414C0031821D /* Volunteer */,
+				B2610FF82455413C0031821D /* Customer */,
 				7C51B8D4245519BC008B8EF3 /* SignUpViewController.swift */,
 				7C313C1224550D5300D89621 /* ViewController.swift */,
-				B2781B8E245532EA000C47AD /* CustomerMenuTab.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -239,7 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C51B8D5245519BC008B8EF3 /* SignUpViewController.swift in Sources */,
+				B2610FFB2455415F0031821D /* Cart.swift in Sources */,
+				B2610FF724553C520031821D /* VolunteerMenuTab.swift in Sources */,
 				7C313C1324550D5300D89621 /* ViewController.swift in Sources */,
+				B2610FFD245541690031821D /* Orders.swift in Sources */,
 				7C313C1924550D5300D89621 /* CovidHelper.xcdatamodeld in Sources */,
 				7C313C0F24550D5300D89621 /* AppDelegate.swift in Sources */,
 				7C313C1124550D5300D89621 /* SceneDelegate.swift in Sources */,
