@@ -18,16 +18,26 @@ module.exports = class DbConnect{
         return DbConnect.admin.firestore(); 
     }
 
-    static getVolunteers(db){
-        
-        db.collection('volunteers').get()
-            .then((snapshot) => {
-                snapshot.forEach((doc) => {
-                console.log(doc.id, '=>', doc.data());
-                });
+    static async getVolunteers(db){
+       
+        var dict = {}; 
+        let data = await db.collection('volunteers').get() 
+       .then((snapshot) => {
+            snapshot.forEach((doc) => {
+                dict[doc.id] = doc.data(); 
+                
             })
-            .catch((err) => {
-                console.log('Error getting documents', err);
-            });
+        })
+        .catch((err) => {
+            console.log('Error getting documents', err);
+        })
+        
+        return new Promise((resolve, reject) =>{
+            resolve(dict); 
+        }); 
+        
+    
+        
     }
+
 }
