@@ -26,7 +26,7 @@ class Cart {
     func getTotal() -> Double {
         var total = 0.0
         for item in items {
-            total += Double(item.quantity) * item.grocery.price
+            total += Double(item.quantity) * item.grocery.price! 
         }
         return total
     }
