@@ -7,7 +7,11 @@
 //
 
 import Foundation
-
+struct CartItem: Codable {
+    var title: String
+    var price: Int
+    var quantity: Int
+}
 class Cart {
     static let currentCart = Cart()
     
