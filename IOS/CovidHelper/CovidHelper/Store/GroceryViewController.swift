@@ -10,7 +10,7 @@ import Alamofire
 class GroceryViewController: UITableViewController {
     @IBOutlet weak var storeNameLabel: UILabel!
     @IBOutlet weak var storeBannerImage: UIImageView!
-    
+    @IBAction func cancel(_ unwindSegue: UIStoryboardSegue) {}
     
     // pass the store groceries
     var store: Store!

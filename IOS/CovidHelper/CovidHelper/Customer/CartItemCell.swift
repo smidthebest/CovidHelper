@@ -25,3 +25,4 @@ class CartItemCell: UITableViewCell {
         grocerySubtotalLabel.text = String(Double(cartItem.quantity) * cartItem.grocery.price!)
     }
 }
+
