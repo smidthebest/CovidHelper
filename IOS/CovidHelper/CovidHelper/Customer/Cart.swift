@@ -7,11 +7,7 @@
 //
 
 import Foundation
-struct CartItem: Codable {
-    var title: String
-    var price: Int
-    var quantity: Int
-}
+
 class Cart {
     static let currentCart = Cart()
     
@@ -30,7 +26,7 @@ class Cart {
     func getTotal() -> Double {
         var total = 0.0
         for item in items {
-            total += Double(item.quantity) * item.grocery.price
+            total += Double(item.quantity) * item.grocery.price! 
         }
         return total
     }
