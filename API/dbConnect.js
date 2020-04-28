@@ -17,18 +17,20 @@ class DbConnect{
         return DbConnect.admin.firestore(); 
     }
 
-    static async getVolunteers(db){
+     async getDb(db, name){
        
         var dict = {}; 
-        let data = await db.collection('volunteers').get() 
+       await db.collection(name).get() 
        .then((snapshot) => {
             snapshot.forEach((doc) => {
                 dict[doc.id] = doc.data(); 
                 
             })
+           
+           
         })
         .catch((err) => {
-            console.log('Error getting documents', err);
+            throw Error; 
         })
         
         return new Promise((resolve, reject) =>{
@@ -37,12 +39,13 @@ class DbConnect{
         
     }
 
-       async addReq(db, data, num){
+
+    async addReq(db, data, num){
         
         let newReq = db.collection("requests").doc("req " + num); 
         //console.log(newReq); 
-      await newReq.set(data)
-      .then((data) =>{
+        await newReq.set(data)
+        .then((data) =>{
            return new Promise((resolve, reject) =>{
                 resolve(data); 
            }); 
