@@ -37,13 +37,15 @@ class DbConnect{
         
     }
 
-      addReq(db, data, num){
+       async addReq(db, data, num){
         
         let newReq = db.collection("requests").doc("req " + num); 
         //console.log(newReq); 
-        let newReqData = newReq.set(data).then(() =>{
-            console.log(newReq); 
-            return true; 
+      await newReq.set(data)
+      .then((data) =>{
+           return new Promise((resolve, reject) =>{
+                resolve(data); 
+           }); 
         }); 
         
     }

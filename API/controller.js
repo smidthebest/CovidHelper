@@ -8,9 +8,12 @@ module.exports.addReq = function (req, res){
     var cur = new db.DbConnect(); 
     num++; 
     var temp = cur.addReq(data, req.query, num); 
-    console.log(temp); 
-    if(temp == true) res.json("true"); 
-    else res.json("False"); 
+    temp.then(() =>{
+        res.json("true"); 
+    })
+    .catch((err) =>{
+        res.json(err); 
+    })
 }
 
 module.exports.getVolunteers = function (){
