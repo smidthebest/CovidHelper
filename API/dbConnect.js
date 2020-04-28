@@ -2,10 +2,9 @@
 class DbConnect{
     static #serviceAccount;
     static admin;
-     count = 0; 
 
     static setUpDB(){
-        DbConnect.#serviceAccount = require("./covidhelper-45bda-firebase-adminsdk-4ssgh-8cd4cdeb33.json");
+        DbConnect.#serviceAccount = require("./info/covidhelper-45bda-firebase-adminsdk-4ssgh-8cd4cdeb33.json");
         DbConnect.admin = require("firebase-admin");  
 
         DbConnect.admin.initializeApp({
@@ -38,12 +37,15 @@ class DbConnect{
         
     }
 
-      addReq(db, data){
-        this.count = this.count +1;
-        console.log(this.count);  
-        let newReq = db.collection("requests").doc("req " + this.count); 
+      addReq(db, data, num){
         
-        let newReqData = newReq.set(data); 
+        let newReq = db.collection("requests").doc("req " + num); 
+        //console.log(newReq); 
+        let newReqData = newReq.set(data).then(() =>{
+            console.log(newReq); 
+            return true; 
+        }); 
+        
     }
 
 }
