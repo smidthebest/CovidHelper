@@ -13,21 +13,18 @@ class DbConnect{
           });
     }
 
-    static getDb(){
+    static database(){
         return DbConnect.admin.firestore(); 
     }
 
-     async getDb(db, name){
+    async getDb(db, name){
        
         var dict = {}; 
-       await db.collection(name).get() 
-       .then((snapshot) => {
+        await db.collection(name).get() 
+        .then((snapshot) => {
             snapshot.forEach((doc) => {
-                dict[doc.id] = doc.data(); 
-                
-            })
-           
-           
+                dict[doc.id] = doc.data();                
+            })     
         })
         .catch((err) => {
             throw Error; 
@@ -43,7 +40,6 @@ class DbConnect{
     async addReq(db, data, num){
         
         let newReq = db.collection("requests").doc("req " + num); 
-        //console.log(newReq); 
         await newReq.set(data)
         .then((data) =>{
            return new Promise((resolve, reject) =>{
@@ -51,6 +47,55 @@ class DbConnect{
            }); 
         }); 
         
+    }
+
+    async acceptRequest(db , name, request){
+      
+        var reqData, volData; 
+        let temp1 =  db.collection("requests").get()
+        .then((snapshot) =>{
+            snapshot.forEach((doc) =>{
+                if(doc.id == request){  
+                    reqData= doc.data(); 
+                }
+            }) 
+        })
+        .catch((err) =>{
+            reject(err); 
+        }); 
+           
+        let temp2 = db.collection("volunteers").get()
+        .then((snapshot) =>{
+           snapshot.forEach((doc) =>{
+                if(doc.id == name){  
+                    volData= doc.data(); 
+                }
+            }) 
+        })
+        .catch((err) =>{
+            reject(err); 
+        }); 
+
+        await temp1; 
+        await temp2; 
+
+        return [reqData, volData];
+    }
+
+    async communicate(token, data){
+        var message = {
+            data: data, 
+            token: token
+        }
+
+        await DbConnect.admin.messaging().send(message)
+        .then((response) => {
+            return response; 
+        })
+        .catch((error) => {
+            console.log(error); 
+            throw error;  
+        });
     }
 
 }
