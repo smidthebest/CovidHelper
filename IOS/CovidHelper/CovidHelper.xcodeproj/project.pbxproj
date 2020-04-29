@@ -14,11 +14,12 @@
 		7C313C1924550D5300D89621 /* CovidHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C313C1724550D5300D89621 /* CovidHelper.xcdatamodeld */; };
 		7C313C1B24550D5300D89621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C313C1A24550D5300D89621 /* Assets.xcassets */; };
 		7C313C1E24550D5300D89621 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C313C1C24550D5300D89621 /* LaunchScreen.storyboard */; };
-		7C313C262455158900D89621 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C313C252455158900D89621 /* GoogleService-Info.plist */; };
 		7C51B8D32455195D008B8EF3 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C51B8D22455195D008B8EF3 /* LoginTextField.swift */; };
 		7C51B8D5245519BC008B8EF3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C51B8D4245519BC008B8EF3 /* SignUpViewController.swift */; };
 		B215D001245658DE00F91888 /* GroceryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B215D000245658DE00F91888 /* GroceryDetailViewController.swift */; };
 		B215D00324565D2D00F91888 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B215D00224565D2D00F91888 /* PaymentViewController.swift */; };
+		B247367D245785E300D61B6F /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247367C245785E300D61B6F /* CartItem.swift */; };
+		B24736812457894100D61B6F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B24736802457894000D61B6F /* GoogleService-Info.plist */; };
 		B2610FFB2455415F0031821D /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2610FFA2455415F0031821D /* Cart.swift */; };
 		B2610FFD245541690031821D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2610FFC245541690031821D /* Order.swift */; };
 		B2781B8F245532EA000C47AD /* CustomerMenuTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2781B8E245532EA000C47AD /* CustomerMenuTab.swift */; };
@@ -26,6 +27,7 @@
 		B290824924556F4000C0D8DF /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290824824556F4000C0D8DF /* OrderViewController.swift */; };
 		B290824B2455720D00C0D8DF /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290824A2455720D00C0D8DF /* CartViewController.swift */; };
 		B290824D2455727000C0D8DF /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290824C2455727000C0D8DF /* CartItemCell.swift */; };
+		B2A9B20B2459E9C8008841BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9B20A2459E9C7008841BA /* SceneDelegate.swift */; };
 		B2C89EA42456040400D9BA40 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C89EA32456040400D9BA40 /* Store.swift */; };
 		B2C89EA6245606FD00D9BA40 /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C89EA5245606FD00D9BA40 /* StoreCell.swift */; };
 		B2C89EA82456099200D9BA40 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C89EA72456099200D9BA40 /* StoreViewController.swift */; };
@@ -44,12 +46,13 @@
 		7C313C1A24550D5300D89621 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C313C1D24550D5300D89621 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C313C1F24550D5300D89621 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C313C252455158900D89621 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C51B8D22455195D008B8EF3 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		7C51B8D4245519BC008B8EF3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		971268C7634AAF11F5E542EA /* libPods-CovidHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CovidHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B215D000245658DE00F91888 /* GroceryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryDetailViewController.swift; sourceTree = "<group>"; };
 		B215D00224565D2D00F91888 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		B247367C245785E300D61B6F /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		B24736802457894000D61B6F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2610FFA2455415F0031821D /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		B2610FFC245541690031821D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B2781B8E245532EA000C47AD /* CustomerMenuTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMenuTab.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 		B290824824556F4000C0D8DF /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		B290824A2455720D00C0D8DF /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		B290824C2455727000C0D8DF /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
+		B2A9B20A2459E9C7008841BA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B2C89EA32456040400D9BA40 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		B2C89EA5245606FD00D9BA40 /* StoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
 		B2C89EA72456099200D9BA40 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
@@ -115,9 +119,10 @@
 				7C313C1224550D5300D89621 /* ViewController.swift */,
 				7C51B8D22455195D008B8EF3 /* LoginTextField.swift */,
 				7C313C0E24550D5300D89621 /* AppDelegate.swift */,
+				B2A9B20A2459E9C7008841BA /* SceneDelegate.swift */,
 				7C313C1A24550D5300D89621 /* Assets.xcassets */,
 				7C313C1F24550D5300D89621 /* Info.plist */,
-				7C313C252455158900D89621 /* GoogleService-Info.plist */,
+				B24736802457894000D61B6F /* GoogleService-Info.plist */,
 				7C313C1724550D5300D89621 /* CovidHelper.xcdatamodeld */,
 			);
 			path = CovidHelper;
@@ -128,6 +133,7 @@
 			children = (
 				B2781B8E245532EA000C47AD /* CustomerMenuTab.swift */,
 				B290824C2455727000C0D8DF /* CartItemCell.swift */,
+				B247367C245785E300D61B6F /* CartItem.swift */,
 				B2610FFA2455415F0031821D /* Cart.swift */,
 				B290824A2455720D00C0D8DF /* CartViewController.swift */,
 				B2610FFC245541690031821D /* Order.swift */,
@@ -239,9 +245,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C313C1E24550D5300D89621 /* LaunchScreen.storyboard in Resources */,
+				B24736812457894100D61B6F /* GoogleService-Info.plist in Resources */,
 				7C313C1B24550D5300D89621 /* Assets.xcassets in Resources */,
 				7C313C1624550D5300D89621 /* Main.storyboard in Resources */,
-				7C313C262455158900D89621 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,12 +307,14 @@
 				B2610FFB2455415F0031821D /* Cart.swift in Sources */,
 				B290824924556F4000C0D8DF /* OrderViewController.swift in Sources */,
 				7C313C1324550D5300D89621 /* ViewController.swift in Sources */,
+				B2A9B20B2459E9C8008841BA /* SceneDelegate.swift in Sources */,
 				B290824D2455727000C0D8DF /* CartItemCell.swift in Sources */,
 				B2610FFD245541690031821D /* Order.swift in Sources */,
 				7C313C1924550D5300D89621 /* CovidHelper.xcdatamodeld in Sources */,
 				B2C89EA42456040400D9BA40 /* Store.swift in Sources */,
 				B290824B2455720D00C0D8DF /* CartViewController.swift in Sources */,
 				7C313C0F24550D5300D89621 /* AppDelegate.swift in Sources */,
+				B247367D245785E300D61B6F /* CartItem.swift in Sources */,
 				B2C89EAF2456156200D9BA40 /* GroceryCell.swift in Sources */,
 				B215D00324565D2D00F91888 /* PaymentViewController.swift in Sources */,
 				B2C89EA6245606FD00D9BA40 /* StoreCell.swift in Sources */,

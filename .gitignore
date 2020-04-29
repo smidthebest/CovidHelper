@@ -1,3 +1,5 @@
-/API/node_modules
-/API/covidhelper-45bda-firebase-adminsdk-4ssgh-dfd30a3fc6.json
-/IOS/CovidHelper/CovidHelper.xcworkspace/xcuserdata/Ankith.xcuserdatad/UserInterfaceState.xcuserstate
+API/node_modules
+API/info/covidhelper-45bda-firebase-adminsdk-4ssgh-8cd4cdeb33.json
+IOS/CovidHelper/CovidHelper.xcworkspace/xcuserdata/
+ANDROID/CovidHelper/app/google-services.json
+IOS/CovidHelper/CovidHelper/GoogleService-Info.plist
