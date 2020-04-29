@@ -27,6 +27,7 @@
 		B290824924556F4000C0D8DF /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290824824556F4000C0D8DF /* OrderViewController.swift */; };
 		B290824B2455720D00C0D8DF /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290824A2455720D00C0D8DF /* CartViewController.swift */; };
 		B290824D2455727000C0D8DF /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290824C2455727000C0D8DF /* CartItemCell.swift */; };
+		B2A9B20B2459E9C8008841BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9B20A2459E9C7008841BA /* SceneDelegate.swift */; };
 		B2C89EA42456040400D9BA40 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C89EA32456040400D9BA40 /* Store.swift */; };
 		B2C89EA6245606FD00D9BA40 /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C89EA5245606FD00D9BA40 /* StoreCell.swift */; };
 		B2C89EA82456099200D9BA40 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C89EA72456099200D9BA40 /* StoreViewController.swift */; };
@@ -59,6 +60,7 @@
 		B290824824556F4000C0D8DF /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		B290824A2455720D00C0D8DF /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		B290824C2455727000C0D8DF /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
+		B2A9B20A2459E9C7008841BA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B2C89EA32456040400D9BA40 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		B2C89EA5245606FD00D9BA40 /* StoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
 		B2C89EA72456099200D9BA40 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				7C313C1224550D5300D89621 /* ViewController.swift */,
 				7C51B8D22455195D008B8EF3 /* LoginTextField.swift */,
 				7C313C0E24550D5300D89621 /* AppDelegate.swift */,
+				B2A9B20A2459E9C7008841BA /* SceneDelegate.swift */,
 				7C313C1A24550D5300D89621 /* Assets.xcassets */,
 				7C313C1F24550D5300D89621 /* Info.plist */,
 				B24736802457894000D61B6F /* GoogleService-Info.plist */,
@@ -304,6 +307,7 @@
 				B2610FFB2455415F0031821D /* Cart.swift in Sources */,
 				B290824924556F4000C0D8DF /* OrderViewController.swift in Sources */,
 				7C313C1324550D5300D89621 /* ViewController.swift in Sources */,
+				B2A9B20B2459E9C8008841BA /* SceneDelegate.swift in Sources */,
 				B290824D2455727000C0D8DF /* CartItemCell.swift in Sources */,
 				B2610FFD245541690031821D /* Order.swift in Sources */,
 				7C313C1924550D5300D89621 /* CovidHelper.xcdatamodeld in Sources */,
