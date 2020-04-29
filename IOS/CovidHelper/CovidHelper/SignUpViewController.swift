@@ -90,12 +90,12 @@ class SignUpViewController: UIViewController {
                         "name": email
                     ])
                     if(index == 0){
-                        let CustomerMenuTab = self.storyboard?.instantiateViewController(withIdentifier: "SUCustomerSegue") as! CustomerMenuTab
+                        let CustomerMenuTab = self.storyboard?.instantiateViewController(withIdentifier: "CustomerMenuTab") as! CustomerMenuTab
                        
                         self.present(CustomerMenuTab, animated: true, completion: nil)
                     }
                     else{
-                        let VolunteerMenuTab = self.storyboard?.instantiateViewController(withIdentifier: "SUVolunteerSegue") as! VolunteerMenuTab
+                        let VolunteerMenuTab = self.storyboard?.instantiateViewController(withIdentifier: "VolunteerMenuTab") as! VolunteerMenuTab
                         
                         self.present(VolunteerMenuTab, animated: true, completion: nil)
                     }

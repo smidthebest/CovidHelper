@@ -469,7 +469,7 @@
         <!--Volunteer Menu Tab-->
         <scene sceneID="Gqi-Ik-TJr">
             <objects>
-                <tabBarController modalPresentationStyle="overFullScreen" id="M5Q-Oi-GUc" customClass="VolunteerMenuTab" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="VolunteerMenuTab" modalPresentationStyle="overFullScreen" id="M5Q-Oi-GUc" customClass="VolunteerMenuTab" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="cjc-xF-F2R"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ApH-0H-djs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
