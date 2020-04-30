@@ -16,7 +16,7 @@ module.exports.postReq = function (req, res){
         res.json("true"); 
     })
     .catch((err) =>{
-        res.json(err); 
+       console.log(err); 
         res.sendStatus(500); 
     })
 }
@@ -29,9 +29,22 @@ module.exports.getReq = function(req, res){
         res.json(dict); 
      })
      .catch((err) =>{
-         res.json(err); 
          res.sendStatus(500); 
      }) 
+}
+
+/**
+ * 
+ * Sends to the client a specific request based on the id. 
+ */
+module.exports.getReqById = function(req, res){
+    con.getDoc(data, "requests", req.params.reqId).then((dict) =>{
+        res.json(dict); 
+    })
+    .catch((err) =>{
+        console.log(err); 
+        res.sendStatus(500); 
+    })
 }
 /*
     Sends to the client all of the volunteers in the database. 
@@ -40,8 +53,22 @@ module.exports.getVolunteers = function (req, res){
     con.getDb(data, "volunteers").then((dict) => {
        res.json(dict); 
     })
+    .catch((err) =>{ 
+        console.log(err); 
+        res.sendStatus(500); 
+    })
+}
+
+/**
+ * 
+ * Sends to the client a specific volunteer based on the id. 
+ */
+module.exports.getVolById = function(req, res){
+    con.getDoc(data, "volunteers", req.params.volId).then((dict) =>{
+        res.json(dict); 
+    })
     .catch((err) =>{
-        res.json(err); 
+        console.log(err); 
         res.sendStatus(500); 
     })
 }
@@ -57,6 +84,20 @@ module.exports.getCustomers = function(req, res){
         res.json(err); 
         res.sendStatus(500); 
     }) 
+}
+
+/**
+ * 
+ * Sends to the client a specific customer based on the id. 
+ */
+module.exports.getCusById = function(req, res){
+    con.getDoc(data, "customers", req.params.cusId).then((dict) =>{
+        res.json(dict); 
+    })
+    .catch((err) =>{
+        console.log(err); 
+        res.sendStatus(500); 
+    })
 }
 
 /*

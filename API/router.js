@@ -5,11 +5,20 @@ module.exports = function(app) {
     .post(contr.postReq)
     .get(contr.getReq); 
 
+    app.route("/request/:reqId")
+    .get(contr.getReqById); 
+
     app.route("/volunteers")
     .get(contr.getVolunteers); 
 
+    app.route("/volunteers/:volId")
+    .get(contr.getVolById); 
+
     app.route("/customers")
     .get(contr.getCustomers);
+
+    app.route("/customers/:cusId")
+    .get(contr.getCusById); 
     
     app.route("/acceptReq")
     .post(contr.acceptReq); 
