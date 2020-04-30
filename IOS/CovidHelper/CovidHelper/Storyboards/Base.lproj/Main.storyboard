@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j4s-Th-yXu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cXt-Ux-J34">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
@@ -149,8 +149,6 @@
                         <outlet property="signupButton" destination="HrO-qB-rfx" id="Ofj-lc-0Qc"/>
                         <outlet property="userTypeControl" destination="HBa-F5-tNh" id="qHL-d8-fgb"/>
                         <outlet property="usernameTextField" destination="9BH-dU-zQV" id="LNa-a1-Rsj"/>
-                        <segue destination="Ouz-jr-wRt" kind="show" identifier="SUCustomerSegue" id="JlU-Sd-kUN"/>
-                        <segue destination="M5Q-Oi-GUc" kind="show" identifier="SUVolunteerSegue" id="eci-En-fmL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nh9-vI-i1m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -342,8 +340,6 @@
                         <outlet property="passwordTextField" destination="l9a-hY-IeD" id="2Gy-jV-hX1"/>
                         <outlet property="signUpButton" destination="1SA-DS-9yp" id="D4K-Gp-vTf"/>
                         <outlet property="usernameTextField" destination="qfN-rZ-iu1" id="DeQ-O2-Wk4"/>
-                        <segue destination="Ouz-jr-wRt" kind="show" identifier="CustomerSegue" id="xHB-VL-CrU"/>
-                        <segue destination="M5Q-Oi-GUc" kind="show" identifier="VolunteerSegue" id="A3s-06-cvt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJQ-px-FU3" sceneMemberID="firstResponder"/>
@@ -401,7 +397,7 @@
             <objects>
                 <viewController modalPresentationStyle="overFullScreen" id="mBj-ve-ldB" customClass="OrderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IQl-dB-MFi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="l3k-Mh-kvn"/>
@@ -439,7 +435,7 @@
             <objects>
                 <viewController modalPresentationStyle="overFullScreen" id="idy-xS-0Dc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aC8-n6-hqc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Kjd-tG-8R9"/>
@@ -455,7 +451,7 @@
             <objects>
                 <viewController modalPresentationStyle="overFullScreen" id="u4a-Fc-xrX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HKI-Eb-yTh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="sMT-OY-KLx"/>
@@ -465,6 +461,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCw-Id-7wW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5135" y="1499"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WGp-kf-uNO">
+            <objects>
+                <navigationController id="cXt-Ux-J34" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Ll-sG-NaT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="j4s-Th-yXu" kind="relationship" relationship="rootViewController" id="M0h-N2-fDl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1hY-gY-3uu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639" y="-317"/>
         </scene>
         <!--Volunteer Menu Tab-->
         <scene sceneID="Gqi-Ik-TJr">
@@ -792,6 +804,7 @@
                         <viewLayoutGuide key="safeArea" id="0Fy-FW-qAf"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="OFX-sm-R6o"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="quantityButtonsContainerView" destination="y9C-aI-nfZ" id="SMO-io-6V8"/>
@@ -1035,6 +1048,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8vB-VM-HeG"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FH8-WS-OnR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVx-8K-yPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1178,7 +1192,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UNI-oX-B2s"/>
-        <segue reference="eci-En-fmL"/>
-        <segue reference="JlU-Sd-kUN"/>
     </inferredMetricsTieBreakers>
 </document>
