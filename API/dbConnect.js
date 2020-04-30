@@ -49,38 +49,49 @@ class DbConnect{
         
     }
 
-    async acceptRequest(db , name, request){
-      
-        var reqData, volData; 
-        let temp1 =  db.collection("requests").get()
+    async getDoc(db, name, id){
+        var data; 
+        await db.collection(name).get(id)
         .then((snapshot) =>{
             snapshot.forEach((doc) =>{
-                if(doc.id == request){  
-                    reqData= doc.data(); 
+                if(doc.id == id){
+                    data = doc.data(); 
                 }
-            }) 
+            })
         })
         .catch((err) =>{
-            reject(err); 
-        }); 
-           
-        let temp2 = db.collection("volunteers").get()
-        .then((snapshot) =>{
-           snapshot.forEach((doc) =>{
-                if(doc.id == name){  
-                    volData= doc.data(); 
-                }
-            }) 
+            throw(err); 
         })
-        .catch((err) =>{
-            reject(err); 
-        }); 
 
-        await temp1; 
-        await temp2; 
+        
+        return data; 
+    }
 
+    async acceptRequest( db, name, request){
+      
+        let volData = this.getDoc(db, "volunteers", name);
+        let reqData = this.getDoc(db, "requests", request);
+
+        await volData; 
+        await reqData; 
+
+        
         return [reqData, volData];
     }
+
+    async acceptVol(db, vol, req){
+        let t =  this.getDoc(db, "volunteers", vol); 
+        let reqData = await this.getDoc(db, "requests", req); 
+        let t1 = this.getDoc(db, "customers", reqData.customer); 
+       
+        let volData = await t; 
+        let custData = await t1; 
+        
+       
+        return [reqData, volData, custData]; 
+    }
+
+    
 
     async communicate(token, data){
         var message = {
@@ -93,10 +104,11 @@ class DbConnect{
             return response; 
         })
         .catch((error) => {
-            console.log(error); 
             throw error;  
         });
     }
+
+   
 
 }
 

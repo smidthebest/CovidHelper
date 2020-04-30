@@ -13,5 +13,8 @@ module.exports = function(app) {
     
     app.route("/acceptReq")
     .post(contr.acceptReq); 
+
+    app.route("/acceptVol")
+    .post(contr.acceptVol); 
     
 }
