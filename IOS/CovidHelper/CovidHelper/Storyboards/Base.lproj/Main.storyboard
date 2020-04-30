@@ -203,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="2548" y="867"/>
         </scene>
-        <!--Sign In-->
+        <!--SignInViewController-->
         <scene sceneID="QvG-bl-6O1">
             <objects>
-                <viewController storyboardIdentifier="SignInViewController" id="j4s-Th-yXu" customClass="ViewController" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" title="SignInViewController" id="j4s-Th-yXu" customClass="ViewController" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ke2-4C-hvB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1040,13 +1040,28 @@
             </objects>
             <point key="canvasLocation" x="6235" y="-1443"/>
         </scene>
-        <!--Profile-->
+        <!--CustomerProfileViewController-->
         <scene sceneID="Xxt-gR-sYv">
             <objects>
-                <viewController title="Profile" id="hyd-hR-ihd" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomerProfileViewController" title="CustomerProfileViewController" id="hyd-hR-ihd" customClass="CustomerProfileViewController" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kpb-BD-JwJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCt-IQ-Qmx" userLabel="Sign Out">
+                                <rect key="frame" x="87" y="423" width="240" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.61176470589999998" green="0.75686274509999996" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutTapped:" destination="iG3-7N-yGf" eventType="touchUpInside" id="j6f-EQ-oDs"/>
+                                    <action selector="signUpPressed:" destination="KoL-Pc-EdM" eventType="touchUpInside" id="qGN-eM-fJG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="IPE-fq-2MF"/>
                     </view>

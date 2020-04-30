@@ -35,6 +35,7 @@
 		B2C89EAB2456113800D9BA40 /* GroceryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C89EAA2456113800D9BA40 /* GroceryViewController.swift */; };
 		B2C89EAD2456125E00D9BA40 /* Grocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C89EAC2456125E00D9BA40 /* Grocery.swift */; };
 		B2C89EAF2456156200D9BA40 /* GroceryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C89EAE2456156200D9BA40 /* GroceryCell.swift */; };
+		B2C9935D245A6F4400EB786B /* CustomerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C9935C245A6F4400EB786B /* CustomerProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		B2C89EAA2456113800D9BA40 /* GroceryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryViewController.swift; sourceTree = "<group>"; };
 		B2C89EAC2456125E00D9BA40 /* Grocery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grocery.swift; sourceTree = "<group>"; };
 		B2C89EAE2456156200D9BA40 /* GroceryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryCell.swift; sourceTree = "<group>"; };
+		B2C9935C245A6F4400EB786B /* CustomerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProfileViewController.swift; sourceTree = "<group>"; };
 		F0707BFD24045FB4691BDDB0 /* Pods-CovidHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidHelper.debug.xcconfig"; path = "Target Support Files/Pods-CovidHelper/Pods-CovidHelper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 				B2610FFC245541690031821D /* Order.swift */,
 				B290824824556F4000C0D8DF /* OrderViewController.swift */,
 				B215D00224565D2D00F91888 /* PaymentViewController.swift */,
+				B2C9935C245A6F4400EB786B /* CustomerProfileViewController.swift */,
 			);
 			path = Customer;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2C9935D245A6F4400EB786B /* CustomerProfileViewController.swift in Sources */,
 				B2C89EAB2456113800D9BA40 /* GroceryViewController.swift in Sources */,
 				B2C89EAD2456125E00D9BA40 /* Grocery.swift in Sources */,
 				B23C36D1245A689F00A46DCB /* VolunteerProfileViewController.swift in Sources */,
