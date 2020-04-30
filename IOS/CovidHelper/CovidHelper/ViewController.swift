@@ -10,7 +10,7 @@ import Firebase
 
 @IBDesignable
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var errMsgField: UILabel!
     @IBOutlet weak var effectView: UIVisualEffectView!
     @IBOutlet var errorView: UIView!
@@ -42,13 +42,13 @@ class ViewController: UIViewController {
     }
     func animateOut()
     {
-            UIView.animate(withDuration: 0.3, animations: {
-                self.errorView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
-                self.errorView.alpha = 0
-                self.effectView.effect = nil
-            }){ ( success:Bool) in
-                self.errorView.removeFromSuperview()
-            }
+        UIView.animate(withDuration: 0.3, animations: {
+            self.errorView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.errorView.alpha = 0
+            self.effectView.effect = nil
+        }){ ( success:Bool) in
+            self.errorView.removeFromSuperview()
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +82,7 @@ class ViewController: UIViewController {
                     self.present(VolunteerMenuTab, animated: true, completion: nil)
                 }
             }
-
+            
             //performSegue(withIdentifier: "loginToPickerSegue", sender: email)
         } else {
             print("no user signed in")
@@ -93,19 +93,19 @@ class ViewController: UIViewController {
         signUpButton.setTitle("Don't have an account? Sign up now!", for: .normal)
         signUpButton.underlineText()
         signUpButton.setTitleColor(.red, for: .normal)
-
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-
-            //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-            //tap.cancelsTouchesInView = false
-            view.addGestureRecognizer(tap)
-        }
-
-        //Calls this function when the tap is recognized.
-        @objc func dismissKeyboard() {
-            //Causes the view (or one of its embedded text fields) to resign the first responder status.
-            view.endEditing(true)
-        }
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     
     func strError(email:String, password:String){
         var booloo = true
@@ -137,20 +137,20 @@ class ViewController: UIViewController {
     
     func signIn(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-    if let user = authResult?.user {
-        print(user)
-        completionBlock(true)
-    } else {
-        completionBlock(false)
-    }
+            if let user = authResult?.user {
+                print(user)
+                completionBlock(true)
+            } else {
+                completionBlock(false)
+            }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         /*if segue.identifier == "loginToPickerSegue"{
-            let destVC = segue.destination as! PickerViewController
-            destVC.senderName = sender as! String
-        }*/
+         let destVC = segue.destination as! PickerViewController
+         destVC.senderName = sender as! String
+         }*/
     }
     
     @IBAction func donePressed(_ sender: Any) {
@@ -180,14 +180,14 @@ class ViewController: UIViewController {
         //print(username + " " + password + " " + err)
         ///true if the user/pass is wrong
         /*print(state)
-        if state{
-            
-            animateIn(errMsg: err)
-        }
-        else{
-            let obj = self.storyboard?.instantiateViewController(withIdentifier: "PickerViewController") as! PickerViewController
-            self.navigationController?.pushViewController(obj, animated: true)
-        }*/
+         if state{
+         
+         animateIn(errMsg: err)
+         }
+         else{
+         let obj = self.storyboard?.instantiateViewController(withIdentifier: "PickerViewController") as! PickerViewController
+         self.navigationController?.pushViewController(obj, animated: true)
+         }*/
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -210,16 +210,16 @@ class ViewController: UIViewController {
 }
 
 extension UIButton {
-  func underlineText() {
-    
-    guard let title = title(for: .normal) else { return }
-
-    let titleString = NSMutableAttributedString(string: title)
-    titleString.addAttribute(
-      .underlineStyle,
-      value: NSUnderlineStyle.single.rawValue,
-      range: NSRange(location: 0, length: title.count)
-    )
-    setAttributedTitle(titleString, for: .normal)
-  }
+    func underlineText() {
+        
+        guard let title = title(for: .normal) else { return }
+        
+        let titleString = NSMutableAttributedString(string: title)
+        titleString.addAttribute(
+            .underlineStyle,
+            value: NSUnderlineStyle.single.rawValue,
+            range: NSRange(location: 0, length: title.count)
+        )
+        setAttributedTitle(titleString, for: .normal)
+    }
 }

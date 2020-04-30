@@ -18,6 +18,7 @@
 		7C51B8D5245519BC008B8EF3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C51B8D4245519BC008B8EF3 /* SignUpViewController.swift */; };
 		B215D001245658DE00F91888 /* GroceryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B215D000245658DE00F91888 /* GroceryDetailViewController.swift */; };
 		B215D00324565D2D00F91888 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B215D00224565D2D00F91888 /* PaymentViewController.swift */; };
+		B23C36D1245A689F00A46DCB /* VolunteerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C36D0245A689F00A46DCB /* VolunteerProfileViewController.swift */; };
 		B247367D245785E300D61B6F /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247367C245785E300D61B6F /* CartItem.swift */; };
 		B24736812457894100D61B6F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B24736802457894000D61B6F /* GoogleService-Info.plist */; };
 		B2610FFB2455415F0031821D /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2610FFA2455415F0031821D /* Cart.swift */; };
@@ -51,6 +52,7 @@
 		971268C7634AAF11F5E542EA /* libPods-CovidHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CovidHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B215D000245658DE00F91888 /* GroceryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryDetailViewController.swift; sourceTree = "<group>"; };
 		B215D00224565D2D00F91888 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		B23C36D0245A689F00A46DCB /* VolunteerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerProfileViewController.swift; sourceTree = "<group>"; };
 		B247367C245785E300D61B6F /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		B24736802457894000D61B6F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2610FFA2455415F0031821D /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				B290821924556B9D00C0D8DF /* VolunteerMenuTab.swift */,
+				B23C36D0245A689F00A46DCB /* VolunteerProfileViewController.swift */,
 			);
 			name = Volunteer;
 			path = ..;
@@ -302,6 +305,7 @@
 			files = (
 				B2C89EAB2456113800D9BA40 /* GroceryViewController.swift in Sources */,
 				B2C89EAD2456125E00D9BA40 /* Grocery.swift in Sources */,
+				B23C36D1245A689F00A46DCB /* VolunteerProfileViewController.swift in Sources */,
 				B2C89EA82456099200D9BA40 /* StoreViewController.swift in Sources */,
 				7C51B8D5245519BC008B8EF3 /* SignUpViewController.swift in Sources */,
 				B2610FFB2455415F0031821D /* Cart.swift in Sources */,
