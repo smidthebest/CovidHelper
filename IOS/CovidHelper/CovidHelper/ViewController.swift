@@ -72,12 +72,12 @@ class ViewController: UIViewController {
             docRef.getDocument { (document, error) in
                 if let document = document, document.exists {
                     print("I'm a customer")
-                    let CustomerMenuTab = self.storyboard?.instantiateViewController(withIdentifier: "CustomerSegue") as! CustomerMenuTab
+                    let CustomerMenuTab = self.storyboard?.instantiateViewController(withIdentifier: "CustomerMenuTab") as! CustomerMenuTab
                     
                     self.present(CustomerMenuTab, animated: true, completion: nil)
                 } else {
                     print("I'm a volunteer")
-                    let VolunteerMenuTab = self.storyboard?.instantiateViewController(withIdentifier: "VolunteerSegue") as! VolunteerMenuTab
+                    let VolunteerMenuTab = self.storyboard?.instantiateViewController(withIdentifier: "VolunteerMenuTab") as! VolunteerMenuTab
                     
                     self.present(VolunteerMenuTab, animated: true, completion: nil)
                 }
@@ -117,12 +117,12 @@ class ViewController: UIViewController {
                 docRef.getDocument { (document, error) in
                     if let document = document, document.exists {
                         print("I'm a customer")
-                        let CustomerMenuTabC = self.storyboard?.instantiateViewController(withIdentifier: "CustomerSegue") as! CustomerMenuTab
+                        let CustomerMenuTabC = self.storyboard?.instantiateViewController(withIdentifier: "CustomerMenuTab") as! CustomerMenuTab
                         
                         self.present(CustomerMenuTabC, animated: true, completion: nil)
                     } else {
                         print("I'm a volunteer")
-                        let VolunteerMenuTabC = self.storyboard?.instantiateViewController(withIdentifier: "VolunteerSegue") as! VolunteerMenuTab
+                        let VolunteerMenuTabC = self.storyboard?.instantiateViewController(withIdentifier: "VolunteerMenuTab") as! VolunteerMenuTab
                         
                         self.present(VolunteerMenuTabC, animated: true, completion: nil)
                     }

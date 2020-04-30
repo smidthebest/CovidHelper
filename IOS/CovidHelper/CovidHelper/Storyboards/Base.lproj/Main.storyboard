@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j4s-Th-yXu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cXt-Ux-J34">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,14 +35,14 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFC-le-q8Y">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="km9-Eo-cTt">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="km9-Eo-cTt">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UxO-Iq-5wd">
                                             <rect key="frame" x="0.0" y="0.0" width="174" height="768"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vQL-io-9bH">
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="vQL-io-9bH">
                                                 <rect key="frame" x="0.0" y="0.0" width="174" height="768"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
@@ -149,8 +149,6 @@
                         <outlet property="signupButton" destination="HrO-qB-rfx" id="Ofj-lc-0Qc"/>
                         <outlet property="userTypeControl" destination="HBa-F5-tNh" id="qHL-d8-fgb"/>
                         <outlet property="usernameTextField" destination="9BH-dU-zQV" id="LNa-a1-Rsj"/>
-                        <segue destination="Ouz-jr-wRt" kind="show" identifier="SUCustomerSegue" id="JlU-Sd-kUN"/>
-                        <segue destination="M5Q-Oi-GUc" kind="show" identifier="SUVolunteerSegue" id="eci-En-fmL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nh9-vI-i1m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -231,14 +229,14 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUa-dY-uXx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="paX-Bi-8LH">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="paX-Bi-8LH">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCZ-m4-eOR">
                                             <rect key="frame" x="0.0" y="0.0" width="406" height="896"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bRq-ZU-QKw">
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="bRq-ZU-QKw">
                                                 <rect key="frame" x="0.0" y="0.0" width="406" height="896"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
@@ -342,8 +340,6 @@
                         <outlet property="passwordTextField" destination="l9a-hY-IeD" id="2Gy-jV-hX1"/>
                         <outlet property="signUpButton" destination="1SA-DS-9yp" id="D4K-Gp-vTf"/>
                         <outlet property="usernameTextField" destination="qfN-rZ-iu1" id="DeQ-O2-Wk4"/>
-                        <segue destination="Ouz-jr-wRt" kind="show" identifier="CustomerSegue" id="xHB-VL-CrU"/>
-                        <segue destination="M5Q-Oi-GUc" kind="show" identifier="VolunteerSegue" id="A3s-06-cvt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJQ-px-FU3" sceneMemberID="firstResponder"/>
@@ -401,7 +397,7 @@
             <objects>
                 <viewController modalPresentationStyle="overFullScreen" id="mBj-ve-ldB" customClass="OrderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IQl-dB-MFi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="l3k-Mh-kvn"/>
@@ -439,7 +435,7 @@
             <objects>
                 <viewController modalPresentationStyle="overFullScreen" id="idy-xS-0Dc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aC8-n6-hqc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Kjd-tG-8R9"/>
@@ -455,7 +451,7 @@
             <objects>
                 <viewController modalPresentationStyle="overFullScreen" id="u4a-Fc-xrX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HKI-Eb-yTh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="sMT-OY-KLx"/>
@@ -466,10 +462,26 @@
             </objects>
             <point key="canvasLocation" x="5135" y="1499"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WGp-kf-uNO">
+            <objects>
+                <navigationController id="cXt-Ux-J34" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Ll-sG-NaT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="j4s-Th-yXu" kind="relationship" relationship="rootViewController" id="M0h-N2-fDl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1hY-gY-3uu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639" y="-317"/>
+        </scene>
         <!--Volunteer Menu Tab-->
         <scene sceneID="Gqi-Ik-TJr">
             <objects>
-                <tabBarController modalPresentationStyle="overFullScreen" id="M5Q-Oi-GUc" customClass="VolunteerMenuTab" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="VolunteerMenuTab" modalPresentationStyle="overFullScreen" id="M5Q-Oi-GUc" customClass="VolunteerMenuTab" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="cjc-xF-F2R"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ApH-0H-djs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -792,6 +804,7 @@
                         <viewLayoutGuide key="safeArea" id="0Fy-FW-qAf"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="OFX-sm-R6o"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="quantityButtonsContainerView" destination="y9C-aI-nfZ" id="SMO-io-6V8"/>
@@ -834,13 +847,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your shipping address..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bG4-b7-heI">
-                                        <rect key="frame" x="120" y="42" width="286" height="21"/>
+                                        <rect key="frame" x="120" y="42" width="286" height="20"/>
                                         <color key="tintColor" red="0.84705882349999995" green="0.14117647059999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="street-address"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deliver to door" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-XL-peV">
-                                        <rect key="frame" x="120" y="72" width="286" height="18"/>
+                                        <rect key="frame" x="120" y="71" width="286" height="18"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -932,7 +945,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNd-86-qmw">
-                                <rect key="frame" x="16" y="704" width="382" height="44"/>
+                                <rect key="frame" x="16" y="753" width="382" height="44"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.85882352939999995" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="m0j-Kp-2TQ"/>
@@ -985,30 +998,30 @@
             <objects>
                 <viewController id="EKu-VT-TYG" userLabel="Payment" customClass="PaymentViewController" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KJy-hz-sw0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Your Credit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVN-7M-7Ly">
-                                <rect key="frame" x="12" y="76" width="390" height="22"/>
+                                <rect key="frame" x="12" y="32" width="390" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1J-vA-2n6">
-                                <rect key="frame" x="12" y="114" width="390" height="52"/>
+                                <rect key="frame" x="12" y="70" width="390" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="cFt-08-jp1"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="powered_stripe" translatesAutoresizingMaskIntoConstraints="NO" id="hbg-IZ-hyb">
-                                <rect key="frame" x="266" y="174" width="132" height="28"/>
+                                <rect key="frame" x="266" y="130" width="132" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="8yw-MT-L2M"/>
                                     <constraint firstAttribute="width" constant="132" id="u9q-Uv-Rzm"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkI-4N-uE7">
-                                <rect key="frame" x="16" y="704" width="382" height="44"/>
+                                <rect key="frame" x="16" y="748" width="382" height="44"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.85882352939999995" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="to3-Yv-ugY"/>
@@ -1035,6 +1048,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8vB-VM-HeG"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FH8-WS-OnR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVx-8K-yPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1160,16 +1174,11 @@
             <point key="canvasLocation" x="5135" y="2213"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="2Bt-fg-B2N"/>
-        <segue reference="eci-En-fmL"/>
-        <segue reference="JlU-Sd-kUN"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="bgLogin" width="621" height="1104"/>
         <image name="burg" width="128" height="128"/>
-        <image name="cart.fill" catalog="system" width="128" height="102"/>
-        <image name="clear.fill" catalog="system" width="128" height="114"/>
+        <image name="cart.fill" catalog="system" width="64" height="50"/>
+        <image name="clear.fill" catalog="system" width="64" height="56"/>
         <image name="cook-01-1" width="128" height="128"/>
         <image name="icon_menu" width="128" height="128"/>
         <image name="icon_star" width="128" height="128"/>
@@ -1177,8 +1186,11 @@
         <image name="loginBGCard" width="550.5" height="715.5"/>
         <image name="logo" width="225" height="225"/>
         <image name="logoWName" width="458" height="426"/>
-        <image name="map" catalog="system" width="128" height="113"/>
-        <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="map" catalog="system" width="64" height="56"/>
+        <image name="person.crop.circle.fill" catalog="system" width="64" height="60"/>
         <image name="powered_stripe" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="UNI-oX-B2s"/>
+    </inferredMetricsTieBreakers>
 </document>
