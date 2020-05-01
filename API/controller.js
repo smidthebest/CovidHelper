@@ -47,6 +47,16 @@ module.exports.updateDoc = function(req, res){
     })
 }
 
+module.exports.deleteDoc = function(req, res){
+    con.deleteDoc(data, req.params.dbName, req.params.docId)
+    .then((resp) =>{
+        res.json(resp); 
+    })
+    .catch((err) =>{
+        console.log(err); 
+        res.sendStatus(500); 
+    })
+}
 
 /*
     The volunteer who wants to accept this request will call this method. 

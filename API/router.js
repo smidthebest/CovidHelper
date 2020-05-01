@@ -11,9 +11,10 @@ module.exports = function(app) {
     .get(contr.getAll); 
     
     app.route("/doc/:dbName/:docId")
-    .get(contr.getId)
+    .get(contr.getDoc)
     .post(contr.addDoc)
-    .put(contr.updateDoc);
+    .put(contr.updateDoc)
+    .delete(contr.deleteDoc); 
 
    
     

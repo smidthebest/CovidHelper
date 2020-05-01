@@ -104,6 +104,16 @@ class DbConnect{
         return ret; 
     }    
 
+    async deleteDoc(db, dbName, docId){
+        var ret; 
+        await db.collection(dbName).doc(docId).delete()
+        .then((data) =>{
+            ret = data; 
+        }); 
+       
+        return ret; 
+    }
+
     async communicate(token, data){
         var message = {
             data: data, 
