@@ -53,6 +53,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        modalPresentationStyle = .overFullScreen
         if(count == 0)
         {
             print("CAME HEREEUFBDKJCDK")
@@ -79,7 +80,7 @@ class ViewController: UIViewController {
                     print("I'm a volunteer")
                     let VolunteerMenuTab = self.storyboard?.instantiateViewController(withIdentifier: "VolunteerMenuTab") as! VolunteerMenuTab
                     
-                    self.present(VolunteerMenuTab, animated: true, completion: nil)
+                   // self.present(VolunteerMenuTab, animated: true, completion: nil)
                 }
             }
 
