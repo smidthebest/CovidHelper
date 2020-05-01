@@ -2,9 +2,16 @@ package com.gavinkhung.covidhelper;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -28,6 +35,8 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -45,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-
-
     }
 
     @Override
@@ -54,25 +61,93 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // INITIALIZE FIREBASE
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-
-        // Check if user is signed in (non-null) and update UI accordingly.
+        // CHECK if user is signed in (non-null) and update UI accordingly.
         currentUser = mAuth.getCurrentUser();
         //updateUI(currentUser);
 
+        // SIGN IN with username and password
         //createNewUser("a@a.com", "a123456789");
         //signInUser("a@a.com", "a123456789");
 
-        // location
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-        getLocation();
-        // sign in with username and password
 
-        queue = Volley.newRequestQueue(this);
+        // LOCATIONS
+        //fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        //getLocation()
+
+
+        // REQUEST
+        //queue = Volley.newRequestQueue(this);
         // http request
-        request("http://www.google.com");
+        //request("http://www.google.com");
+
+
+        // CREATE NOTIFICATION
+        //createNotification();
+
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w("TAG", "getInstanceId failed", task.getException());
+                            return;
+                        }
+
+                        // Get new Instance ID token
+                        String token = task.getResult().getToken();
+
+                        // Log and toast
+                        Log.d("NEWTOKEN", token);
+                        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    public void createNotification(){
+        final String CHANNEL_ID = new String("1");
+        final int notificationId = 1;
+
+        // CREATE an explicit intent for an Activity in your app
+        //Intent intent = new Intent(this, AlertDetails.class);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        //PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        // CREATE notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setContentTitle("My notification")
+                .setContentText("Hello World!")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                // Set the intent that will fire when the user taps the notification
+                //.setContentIntent(pendingIntent)
+                //.setAutoCancel(true);
+
+        // CREATE the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            String channel_name = "1";
+            String channel_description = "1";
+            CharSequence name = channel_name;
+            String description = channel_description;
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+
+        // CREATE NEW TOKEN
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        // notificationId is a unique int for each notification that you must define
+        notificationManager.notify(notificationId, builder.build());
     }
 
     public void getLocation(){
