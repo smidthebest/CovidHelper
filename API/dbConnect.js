@@ -17,6 +17,11 @@ class DbConnect{
         return DbConnect.admin.firestore(); 
     }
 
+    /**
+     * 
+     * @param {the database instance} db 
+     * @param {the name of th db to be retrieved} name 
+     */
     async getDb(db, name){
        
         var dict = {}; 
@@ -36,7 +41,13 @@ class DbConnect{
         
     }
 
-
+    /**
+     * 
+     * @param {the database instance} db 
+     * @param {the data to be added to the new document} data 
+     * @param {the database to which the document is being added to} dbName 
+     * @param {the name of the new document} name 
+     */
     async addDoc(db, data, dbName, name){
         var ret; 
         let newReq = db.collection(dbName).doc(name); 
@@ -52,6 +63,12 @@ class DbConnect{
         
     }
 
+    /**
+     * 
+     * @param {the database instance} db 
+     * @param {the name of the database to which you are getting from} name 
+     * @param {the doc id of the document to be retrieved} id 
+     */
     async getDoc(db, name, id){
         var data; 
         await db.collection(name).get(id)
@@ -70,6 +87,12 @@ class DbConnect{
         return data; 
     }
 
+    /**
+     * 
+     * @param {the database instance} db 
+     * @param {the name of the volunteer which is being accepted} name 
+     * @param {the name of the request which is being accepted} request 
+     */
     async acceptRequest( db, name, request){
       
         let volData = this.getDoc(db, "volunteers", name);
@@ -82,6 +105,12 @@ class DbConnect{
         return [reqData, volData];
     }
 
+    /**
+     * 
+     * @param {the database instance} db 
+     * @param {the volunteer which is being accepted by the customer} vol 
+     * @param {the request to which they are accepting} req 
+     */
     async acceptVol(db, vol, req){
         let t =  this.getDoc(db, "volunteers", vol); 
         let reqData = await this.getDoc(db, "requests", req); 
@@ -94,6 +123,13 @@ class DbConnect{
         return [reqData, volData, custData]; 
     }
 
+    /**
+     * 
+     * @param {the database instance} db 
+     * @param {the name of database to be updated} dbName 
+     * @param {the name of the document to be updated} docId 
+     * @param {the data that will be entered in} data 
+     */
     async updateDoc(db, dbName, docId, data){
         var ret; 
         await db.collection(dbName).doc(docId).update(data)
@@ -104,6 +140,12 @@ class DbConnect{
         return ret; 
     }    
 
+    /**
+     * 
+     * @param {the database} db 
+     * @param {the name of the db from which to delete from} dbName 
+     * @param {the doc to be deleted} docId 
+     */
     async deleteDoc(db, dbName, docId){
         var ret; 
         await db.collection(dbName).doc(docId).delete()
@@ -114,6 +156,11 @@ class DbConnect{
         return ret; 
     }
 
+    /**
+     * 
+     * @param {* the token of the client to communicate to} token 
+     * @param {* the data to communicate to the client} data 
+     */
     async communicate(token, data){
         var message = {
             data: data, 
@@ -128,9 +175,6 @@ class DbConnect{
             throw error;  
         });
     }
-
-   
-
 }
 
 module.exports = {

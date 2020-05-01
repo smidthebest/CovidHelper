@@ -4,6 +4,9 @@ db.DbConnect.setUpDB();
 var data = db.DbConnect.database();
 var con = new db.DbConnect(); 
 
+/**
+ * Will return to the client all the entries in that database. 
+ */
 module.exports.getAll = function(req, res){
     con.getDb(data, req.params.dbName).then((dict) =>{
         res.json(dict); 
@@ -14,16 +17,22 @@ module.exports.getAll = function(req, res){
     })
 }
 
-module.exports.getId = function(req, res){
+/**
+ * Will return to the client the specific document based on the id given. 
+ */
+module.exports.getDoc = function(req, res){
     con.getDoc(data, req.params.dbName, req.params.docId).then((dict) =>{
         res.json(dict); 
     })
     .catch((err) =>{
         console.log(err); 
         res.sendStatus(500); 
-    })
+    });
 }
 
+/**
+ * Will add a new document to the database based on the client's data and id. 
+ */
 module.exports.addDoc = function(req, res){
    
     con.addDoc(data, req.query, req.params.dbName,  req.params.docId)
@@ -36,6 +45,9 @@ module.exports.addDoc = function(req, res){
     })
 }
 
+/**
+ * Will update a document based on the data that the client passed in. 
+ */
 module.exports.updateDoc = function(req, res){
     con.updateDoc(data, req.params.dbName, req.params.docId, req.query)
     .then((resp) =>{
@@ -47,6 +59,9 @@ module.exports.updateDoc = function(req, res){
     })
 }
 
+/**
+ * Will delete the document that the user specified. 
+ */
 module.exports.deleteDoc = function(req, res){
     con.deleteDoc(data, req.params.dbName, req.params.docId)
     .then((resp) =>{
