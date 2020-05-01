@@ -3,68 +3,9 @@ let db = require("./dbConnect.js");
 db.DbConnect.setUpDB(); 
 var data = db.DbConnect.database();
 var con = new db.DbConnect(); 
-var num = 0; 
 
-/*
-    Adds a request to the database, made from a customer. 
-*/
-module.exports.postReq = function (req, res){
-     
-    num++; 
-    con.addReq(data, req.query, num) 
-    .then(() =>{
-        res.json("true"); 
-    })
-    .catch((err) =>{
-       console.log(err); 
-        res.sendStatus(500); 
-    })
-}
-
-/*
-    Sends to the client all of the requests in the database. 
-*/
-module.exports.getReq = function(req, res){
-    con.getDb(data, "requests").then((dict) => {
-        res.json(dict); 
-     })
-     .catch((err) =>{
-         res.sendStatus(500); 
-     }) 
-}
-
-/**
- * 
- * Sends to the client a specific request based on the id. 
- */
-module.exports.getReqById = function(req, res){
-    con.getDoc(data, "requests", req.params.reqId).then((dict) =>{
-        res.json(dict); 
-    })
-    .catch((err) =>{
-        console.log(err); 
-        res.sendStatus(500); 
-    })
-}
-/*
-    Sends to the client all of the volunteers in the database. 
-*/
-module.exports.getVolunteers = function (req, res){
-    con.getDb(data, "volunteers").then((dict) => {
-       res.json(dict); 
-    })
-    .catch((err) =>{ 
-        console.log(err); 
-        res.sendStatus(500); 
-    })
-}
-
-/**
- * 
- * Sends to the client a specific volunteer based on the id. 
- */
-module.exports.getVolById = function(req, res){
-    con.getDoc(data, "volunteers", req.params.volId).then((dict) =>{
+module.exports.getAll = function(req, res){
+    con.getDb(data, req.params.dbName).then((dict) =>{
         res.json(dict); 
     })
     .catch((err) =>{
@@ -73,25 +14,8 @@ module.exports.getVolById = function(req, res){
     })
 }
 
-/*
-    Sends to the client all of the customers in the database. 
-*/
-module.exports.getCustomers = function(req, res){
-    con.getDb(data, "customers").then((dict) =>{
-        res.json(dict); 
-    })
-    .catch((err) =>{
-        res.json(err); 
-        res.sendStatus(500); 
-    }) 
-}
-
-/**
- * 
- * Sends to the client a specific customer based on the id. 
- */
-module.exports.getCusById = function(req, res){
-    con.getDoc(data, "customers", req.params.cusId).then((dict) =>{
+module.exports.getId = function(req, res){
+    con.getDoc(data, req.params.dbName, req.params.docId).then((dict) =>{
         res.json(dict); 
     })
     .catch((err) =>{
@@ -99,6 +23,30 @@ module.exports.getCusById = function(req, res){
         res.sendStatus(500); 
     })
 }
+
+module.exports.addDoc = function(req, res){
+   
+    con.addDoc(data, req.query, req.params.dbName,  req.params.docId)
+    .then((resp) =>{
+        res.json(resp); 
+    })
+    .catch((err) =>{
+        console.log(err); 
+        res.sendStatus(500); 
+    })
+}
+
+module.exports.updateDoc = function(req, res){
+    con.updateDoc(data, req.params.dbName, req.params.docId, req.query)
+    .then((resp) =>{
+        res.json(resp); 
+    })
+    .catch((err) =>{
+        console.log(err); 
+        res.sendStatus(500); 
+    })
+}
+
 
 /*
     The volunteer who wants to accept this request will call this method. 

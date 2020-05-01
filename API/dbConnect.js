@@ -37,15 +37,18 @@ class DbConnect{
     }
 
 
-    async addReq(db, data, num){
-        
-        let newReq = db.collection("requests").doc("req " + num); 
+    async addDoc(db, data, dbName, name){
+        var ret; 
+        let newReq = db.collection(dbName).doc(name); 
         await newReq.set(data)
         .then((data) =>{
-           return new Promise((resolve, reject) =>{
-                resolve(data); 
-           }); 
+          ret = data; 
+        })
+        .catch((err) => {
+            throw(err)
         }); 
+
+        return ret; 
         
     }
 
@@ -91,7 +94,15 @@ class DbConnect{
         return [reqData, volData, custData]; 
     }
 
-    
+    async updateDoc(db, dbName, docId, data){
+        var ret; 
+        await db.collection(dbName).doc(docId).update(data)
+        .then((data) =>{
+            ret = data; 
+        }); 
+
+        return ret; 
+    }    
 
     async communicate(token, data){
         var message = {
