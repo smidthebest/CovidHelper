@@ -3,46 +3,74 @@ let db = require("./dbConnect.js");
 db.DbConnect.setUpDB(); 
 var data = db.DbConnect.database();
 var con = new db.DbConnect(); 
-var num = 0; 
 
-
-module.exports.postReq = function (req, res){
-     
-    num++; 
-    con.addReq(data, req.query, num) 
-    .then(() =>{
-        res.json("true"); 
-    })
-    .catch((err) =>{
-        res.json(err); 
-    })
-}
-
-module.exports.getReq = function(req, res){
-    con.getDb(data, "requests").then((dict) => {
-        res.json(dict); 
-     })
-     .catch((err) =>{
-         res.json(err); 
-     }) 
-}
-
-module.exports.getVolunteers = function (req, res){
-    con.getDb(data, "volunteers").then((dict) => {
-       res.json(dict); 
-    })
-    .catch((err) =>{
-        res.json(err); 
-    })
-}
-
-module.exports.getCustomers = function(req, res){
-    con.getDb(data, "customers").then((dict) =>{
+/**
+ * Will return to the client all the entries in that database. 
+ */
+module.exports.getAll = function(req, res){
+    con.getDb(data, req.params.dbName).then((dict) =>{
         res.json(dict); 
     })
     .catch((err) =>{
-        res.json(err); 
-    }) 
+        console.log(err); 
+        res.sendStatus(500); 
+    })
+}
+
+/**
+ * Will return to the client the specific document based on the id given. 
+ */
+module.exports.getDoc = function(req, res){
+    con.getDoc(data, req.params.dbName, req.params.docId).then((dict) =>{
+        res.json(dict); 
+    })
+    .catch((err) =>{
+        console.log(err); 
+        res.sendStatus(500); 
+    });
+}
+
+/**
+ * Will add a new document to the database based on the client's data and id. 
+ */
+module.exports.addDoc = function(req, res){
+   
+    con.addDoc(data, req.query, req.params.dbName,  req.params.docId)
+    .then((resp) =>{
+        res.json(resp); 
+    })
+    .catch((err) =>{
+        console.log(err); 
+        res.sendStatus(500); 
+    })
+}
+
+/**
+ * Will update a document based on the data that the client passed in. 
+ */
+module.exports.updateDoc = function(req, res){
+    con.updateDoc(data, req.params.dbName, req.params.docId, req.query)
+    .then((resp) =>{
+        res.json(resp); 
+    })
+    .catch((err) =>{
+        console.log(err); 
+        res.sendStatus(500); 
+    })
+}
+
+/**
+ * Will delete the document that the user specified. 
+ */
+module.exports.deleteDoc = function(req, res){
+    con.deleteDoc(data, req.params.dbName, req.params.docId)
+    .then((resp) =>{
+        res.json(resp); 
+    })
+    .catch((err) =>{
+        console.log(err); 
+        res.sendStatus(500); 
+    })
 }
 
 /*
@@ -52,6 +80,10 @@ module.exports.getCustomers = function(req, res){
 module.exports.acceptReq = function(req, res){
     var name = req.query["name"]; 
     var request = req.query["request"]; 
+    if(name == null || request == null){
+        res.sendStatus(404);
+        return; 
+    }
     con.acceptRequest(data, name, request).then(ans => 
         con.communicate( ans[0].token, ans[1])
     )
@@ -59,7 +91,35 @@ module.exports.acceptReq = function(req, res){
         res.json(resp); 
     })
     .catch((err) =>{
-        console.log(err); 
+        res.sendStatus(500); 
+    })
+}
+
+
+/**
+ * The senior who accepcts a volunteer will call this method. It will communicate to the volunteer his data so 
+ * that he can fulfill the request. 
+ */
+module.exports.acceptVol = function(req, res){
+    var vol = req.query["vol"]; 
+    var req = req.query["req"]; 
+    if(vol == null || req == null) {
+        res.sendStatus(404); 
+        return; 
+    }
+   
+    con.acceptVol(data, vol, req)
+    .then(ans => {
+       var combine = {
+           reqData: ans[0], 
+           custData: ans[2]
+       }; 
+        con.communicate(ans[1].token, combine); 
+    })
+    .then((resp) =>{
+        res.json(resp); 
+    })
+    .catch((err) =>{
         res.sendStatus(500); 
     })
 }
