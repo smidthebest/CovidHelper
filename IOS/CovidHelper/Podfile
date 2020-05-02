@@ -12,5 +12,8 @@ target 'CovidHelper' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
   pod 'SwiftyJSON'
+  pod 'Firebase'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 
 end

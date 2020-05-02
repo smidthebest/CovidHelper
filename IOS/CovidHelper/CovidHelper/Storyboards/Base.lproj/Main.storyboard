@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cXt-Ux-J34">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cXt-Ux-J34">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -491,13 +491,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your shipping address..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bG4-b7-heI">
-                                        <rect key="frame" x="120" y="42" width="247" height="20"/>
+                                        <rect key="frame" x="120" y="42" width="247" height="21"/>
                                         <color key="tintColor" red="0.84705882349999995" green="0.14117647059999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="street-address"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deliver to door" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-XL-peV">
-                                        <rect key="frame" x="120" y="71" width="247" height="18"/>
+                                        <rect key="frame" x="120" y="72" width="247" height="18"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -628,8 +628,14 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="MapView" destination="pqS-HS-Fpt" id="5Dg-lI-sRn"/>
+                        <outlet property="addPaymentButton" destination="nNd-86-qmw" id="2Lq-AK-0yt"/>
+                        <outlet property="addressFieldView" destination="O9v-SO-7AO" id="qmZ-Wj-1et"/>
+                        <outlet property="addressTextField" destination="bG4-b7-heI" id="tcT-0A-XAH"/>
+                        <outlet property="cartTotalLabel" destination="Ccl-gX-czx" id="Zbp-h4-nYw"/>
                         <outlet property="menuBarButtonItem" destination="c2E-Hf-neC" id="JSn-kX-i8e"/>
                         <outlet property="tableView" destination="tTE-5r-BLw" id="4bk-V0-KnP"/>
+                        <outlet property="totalView" destination="sqJ-IK-nb9" id="M7U-mp-xcN"/>
                         <segue destination="EKu-VT-TYG" kind="show" id="aCY-xG-C78"/>
                     </connections>
                 </viewController>
@@ -713,7 +719,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ty-wh-cg6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5135" y="-3041"/>
+            <point key="canvasLocation" x="5134" y="-2869"/>
         </scene>
         <!--Delivery Tracker-->
         <scene sceneID="dAJ-18-B2u">
@@ -822,38 +828,38 @@
             <objects>
                 <viewController storyboardIdentifier="SignInPage" modalPresentationStyle="fullScreen" id="Yk3-3A-zNb" customClass="ViewController" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xkg-UP-UVN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgLogin" translatesAutoresizingMaskIntoConstraints="NO" id="h3n-aF-R3G">
-                                <rect key="frame" x="0.0" y="0.0" width="469" height="975"/>
+                                <rect key="frame" x="0.0" y="0.0" width="469" height="995"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBGCard" translatesAutoresizingMaskIntoConstraints="NO" id="PId-lw-MVQ">
-                                <rect key="frame" x="9" y="-147.5" width="357" height="824"/>
+                                <rect key="frame" x="9" y="-137.5" width="357" height="824"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="824" id="k1W-kZ-qyA"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWName" translatesAutoresizingMaskIntoConstraints="NO" id="C3C-bj-Gdy">
-                                <rect key="frame" x="67.5" y="112.5" width="240" height="128"/>
+                                <rect key="frame" x="67.5" y="122.5" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="bQ2-xz-SX9"/>
                                     <constraint firstAttribute="height" constant="128" id="o08-K4-6pN"/>
                                 </constraints>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lWk-Ny-Bex">
-                                <rect key="frame" x="0.0" y="44" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="GBm-0o-WMI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GBm-0o-WMI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W9J-Kt-qTh">
-                                            <rect key="frame" x="0.0" y="0.0" width="135" height="475"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="135" height="495"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="8i6-fn-nnj">
-                                                <rect key="frame" x="0.0" y="0.0" width="135" height="475"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8i6-fn-nnj">
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="495"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -865,7 +871,7 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1f-Fy-Jb8" customClass="LoginTextField" customModule="CovidHelper" customModuleProvider="target">
-                                <rect key="frame" x="67.5" y="262.5" width="240" height="31"/>
+                                <rect key="frame" x="67.5" y="272.5" width="240" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="CMs-0q-6N8"/>
                                 </constraints>
@@ -874,25 +880,25 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIW-3N-asg">
-                                <rect key="frame" x="94" y="262.5" width="62.5" height="13"/>
+                                <rect key="frame" x="94" y="272.5" width="62.5" height="13"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
                                 <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LXw-hq-nIk" customClass="LoginTextField" customModule="CovidHelper" customModuleProvider="target">
-                                <rect key="frame" x="67.5" y="301.5" width="240" height="37.5"/>
+                                <rect key="frame" x="67.5" y="311.5" width="240" height="37.5"/>
                                 <color key="textColor" red="0.70980392160000005" green="0.41960784309999999" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVv-lv-F9u">
-                                <rect key="frame" x="94" y="304.5" width="63.5" height="13"/>
+                                <rect key="frame" x="94" y="314.5" width="63.5" height="13"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
                                 <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIP-ij-EyR">
-                                <rect key="frame" x="65.5" y="368" width="242" height="52"/>
+                                <rect key="frame" x="65.5" y="378" width="242" height="52"/>
                                 <color key="backgroundColor" red="0.61176470589999998" green="0.75686274509999996" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                 <state key="normal" title="Log In">
@@ -903,7 +909,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kk8-rP-qcd">
-                                <rect key="frame" x="25.5" y="490" width="333" height="32"/>
+                                <rect key="frame" x="25.5" y="500" width="333" height="32"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Don't have an account? Sign up now!">
                                     <color key="titleColor" red="0.70980392160000005" green="0.41960784309999999" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1034,14 +1040,14 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJY-nj-ZuI">
                                 <rect key="frame" x="0.0" y="44" width="385" height="603"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="I1Q-0Z-zLf">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="I1Q-0Z-zLf">
                                     <rect key="frame" x="0.0" y="0.0" width="385" height="603"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O2u-4d-fV8">
                                             <rect key="frame" x="0.0" y="0.0" width="145" height="475"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="5pp-qe-Q8P">
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5pp-qe-Q8P">
                                                 <rect key="frame" x="0.0" y="0.0" width="145" height="475"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
@@ -1201,11 +1207,15 @@
             <point key="canvasLocation" x="3016.8000000000002" y="671.51424287856082"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Hd3-Cw-T47"/>
+        <segue reference="UNI-oX-B2s"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bgLogin" width="621" height="1104"/>
         <image name="burg" width="128" height="128"/>
-        <image name="cart.fill" catalog="system" width="64" height="50"/>
-        <image name="clear.fill" catalog="system" width="64" height="56"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="clear.fill" catalog="system" width="128" height="114"/>
         <image name="cook-01-1" width="128" height="128"/>
         <image name="icon_menu" width="128" height="128"/>
         <image name="icon_star" width="128" height="128"/>
@@ -1213,12 +1223,8 @@
         <image name="loginBGCard" width="550.5" height="715.5"/>
         <image name="logo" width="225" height="225"/>
         <image name="logoWName" width="458" height="426"/>
-        <image name="map" catalog="system" width="64" height="56"/>
-        <image name="person.crop.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="map" catalog="system" width="128" height="113"/>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="powered_stripe" width="128" height="128"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Hd3-Cw-T47"/>
-        <segue reference="UNI-oX-B2s"/>
-    </inferredMetricsTieBreakers>
 </document>

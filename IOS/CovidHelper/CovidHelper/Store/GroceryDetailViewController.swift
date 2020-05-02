@@ -52,7 +52,7 @@ class GroceryDetailViewController : UIViewController
         groceryNameLabel.text = grocery.name
         
         if let price = grocery.price {
-            priceLabel.text = "Php \(price)"
+            priceLabel.text = "USD \(price)"
         }
 
         groceryDecriptionLabel.text = grocery.description
@@ -77,7 +77,7 @@ class GroceryDetailViewController : UIViewController
     func updateTotalLabel()
     {
         if let price = grocery.price {
-            totalLabel.text = "Php \(price * Double(quantity))"
+            totalLabel.text = "USD \(price * Double(quantity))"
         }
     }
     
