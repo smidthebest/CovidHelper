@@ -5,7 +5,7 @@
 //  Created by Ankith on 4/25/20.
 //  Copyright © 2020 Arnav Reddy. All rights reserved.
 //
-/*
+
 import Foundation
 import Alamofire
 import SwiftyJSON
@@ -31,7 +31,6 @@ class Order {
         address = json["address"].string
         orderDetails = json["orderDetails"].array
         
-        //hmmm
     }
     
         // locally initializer
@@ -81,4 +80,4 @@ class Order {
         }
     }
 }
-*/
+

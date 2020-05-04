@@ -27,7 +27,7 @@ class Grocery {
     }
     
     class func getGroceries(withStoreId storeId: String, completion: @escaping ([Grocery]) -> Void) {
-        /*
+        
         let ref = Database.database().reference().child("stores/\(storeId)/groceries")
         ref.observeSingleEvent(of: .value) { (snapshot) in
             var groceries = [Grocery]()
@@ -41,7 +41,6 @@ class Grocery {
             
             
         }
- */
     }
  
 }

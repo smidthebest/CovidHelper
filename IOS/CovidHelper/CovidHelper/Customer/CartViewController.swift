@@ -68,7 +68,7 @@ class CartViewController : UIViewController {
     {
         cartItems = Cart.currentCart.items
         tableView.reloadData()
-        cartTotalLabel.text = "Php\(Cart.currentCart.getTotal())"
+        cartTotalLabel.text = "USD\(Cart.currentCart.getTotal())"
     }
     
     

@@ -31,7 +31,7 @@ class GroceryCell : UITableViewCell
     
 
         if let price = grocery.price {
-            priceLabel.text = "Php \(price)"
+            priceLabel.text = "USD \(price)"
         }
 
         
