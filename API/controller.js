@@ -102,13 +102,13 @@ module.exports.acceptReq = function(req, res){
  */
 module.exports.acceptVol = function(req, res){
     var vol = req.query["vol"]; 
-    var req = req.query["req"]; 
-    if(vol == null || req == null) {
+    var requ = req.query["req"]; 
+    if(vol == null || requ == null) {
         res.sendStatus(404); 
         return; 
     }
    
-    con.acceptVol(data, vol, req)
+    con.acceptVol(data, vol, requ)
     .then(ans => {
        var combine = {
            reqData: ans[0], 
@@ -120,6 +120,25 @@ module.exports.acceptVol = function(req, res){
         res.json(resp); 
     })
     .catch((err) =>{
+        res.sendStatus(500); 
+    })
+}
+
+module.exports.compReq = function(req, res){
+    var vol = req.query["vol"]; 
+    var requ = req.query["req"]; 
+    var curst = req.query["cust"]; 
+    if(vol == null || requ == null || curst == null){
+        res.sendStatus(404); 
+        return; 
+    }
+
+    con.compReq(data, vol, requ, curst)
+    .then((Resp) => {
+        res.json(Resp);
+    })
+    .catch((err) =>{
+        console.log(err); 
         res.sendStatus(500); 
     })
 }

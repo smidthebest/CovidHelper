@@ -16,6 +16,9 @@ module.exports = function(app) {
     .put(contr.updateDoc)
     .delete(contr.deleteDoc); 
 
+    app.route("/completeReq")
+    .post(contr.compReq); 
+
    
     
 }

@@ -112,8 +112,10 @@ class DbConnect{
      * @param {the request to which they are accepting} req 
      */
     async acceptVol(db, vol, req){
+        db.collection("volunteers").doc(vol).update({state: "in progress"}); 
         let t =  this.getDoc(db, "volunteers", vol); 
         let reqData = await this.getDoc(db, "requests", req); 
+        db.collection("requests").doc(req).update({state: "in progress"}); 
         let t1 = this.getDoc(db, "customers", reqData.customer); 
        
         let volData = await t; 
@@ -143,8 +145,8 @@ class DbConnect{
     /**
      * 
      * @param {the database} db 
-     * @param {the name of the db from which to delete from} dbName 
-     * @param {the doc to be deleted} docId 
+     * @param {the name of the db from which to delete from }dbName 
+     * @param {the doc to be deleted }docId 
      */
     async deleteDoc(db, dbName, docId){
         var ret; 
@@ -174,6 +176,27 @@ class DbConnect{
         .catch((error) => {
             throw error;  
         });
+    }
+
+    async compReq(db, vol, req, cust){
+       
+        let volData = this.getDoc(db, "volunteers", vol);
+        let reqData = this.getDoc(db, "requests", req); 
+        let custData = this.getDoc(db, "customers", cust); 
+
+        await volData; 
+        await reqData; 
+        await custData; 
+
+        let t1 = this.updateDoc(db, "volunteers", vol, {state: "free"}); 
+        let t2 = this.deleteDoc(db, "requests", req );
+      
+        let t3 = this.communicate(custData["token"], {vData: volData, reqData: reqData}); 
+
+        await t3
+
+        return t3; 
+
     }
 }
 
