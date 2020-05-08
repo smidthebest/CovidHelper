@@ -16,6 +16,8 @@ import android.content.Intent;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
@@ -66,9 +68,15 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Order> orders;
     private RequestQueue queue;
 
-    private Object ordersLock = new Object();
-
+    private volatile Object ordersLock = new Object();
     private final String KEY = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlltSUc4YWNmTkV0c1hPT0FwY05qdSJ9.eyJpc3MiOiJodHRwczovL2Rldi1kOTc4YjRxMy5hdXRoMC5jb20vIiwic3ViIjoidDJRWXNQM01aQTRyc2FzbmlNMTN4MlZWRm1CalNmODRAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjgwODEiLCJpYXQiOjE1ODg5MjE2NzUsImV4cCI6MTU4OTAwODA3NSwiYXpwIjoidDJRWXNQM01aQTRyc2FzbmlNMTN4MlZWRm1CalNmODQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.CaqVIpLRGHR39o76GXgkWNvlkzl7eqXT80DJAs9WLcATS1KWahtQiSxCHyx5h87z4MkgNb3UWxHMFbx7ruHmA6wlLOYAh79penPrez2G3JTUUsnI2LRwEQamhBD0Ugd6qTjaUQUoE7ZX0yLUILLUxCJxE1GTE_X3Y4izyqVuSlr_tfuGonBbpnm4O2AK6FMS28czp5dIGFquuSGqjXKl9gIguz6nHVtswoBM4QgrdNfWK7fy4fq_gvfDYdX9_TRUCJkYBdLML_vjpUn6Jox6GCT5PylC0HNUMZ5ph0M57cdQhVzt5ncHdJz_T5fPvw2hfCOk0UbMar4VpK5-scQTzA";
+
+    // allows you to send Message and Runnable objects to the MessageQueue
+    // the thread bounded to the handler is the thread that initialized the handler
+    // so the main thread is bound to the handler
+    private Handler mainHandler = new Handler(Looper.getMainLooper());
+
+    // loops through the MessageQueue
 
     @Override
     public void onStart() {
@@ -83,8 +91,13 @@ public class MainActivity extends AppCompatActivity {
 
         final RecyclerView rvOrders = findViewById(R.id.recyclerView);
         orders = new ArrayList<Order>();
-        //orders.add(new Order("1", "", "1", "", "", "", ""));
+        orders.add(new Order("1", "", "1", "", "", "", ""));
         //orders.add(new Order("2", "", "2", "", "", "", ""));
+        /*
+        OrderAdapter adapter = new OrderAdapter(orders);
+        rvOrders.setAdapter(adapter);
+        rvOrders.setLayoutManager(new LinearLayoutManager(this));
+         */
 
         // INITIALIZE FIREBASE
         mAuth = FirebaseAuth.getInstance();
@@ -107,6 +120,35 @@ public class MainActivity extends AppCompatActivity {
         // REQUEST
         queue = Volley.newRequestQueue(this);
 
+
+        try {
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    synchronized (ordersLock){
+                        try {
+                            ordersLock.wait();
+                            mainHandler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    OrderAdapter adapter = new OrderAdapter(orders);
+                                    rvOrders.setAdapter(adapter);
+                                    rvOrders.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                                }
+                            });
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            });
+            t.start();
+
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+
+
         try {
             Thread t = new Thread(new Runnable() {
                 @Override
@@ -115,19 +157,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             t.start();
-            t.join();
-
-            Thread.sleep(500);
-
-            OrderAdapter adapter = new OrderAdapter(orders);
-            rvOrders.setAdapter(adapter);
-            rvOrders.setLayoutManager(new LinearLayoutManager(this));
-
         } catch (Exception e){
 
         }
-
-
 
         // http request
         //request("http://www.google.com");
@@ -361,43 +393,36 @@ public class MainActivity extends AppCompatActivity {
                         Log.w("TAG", "Error deleting document", e);
                     }
                 });
-
     }
 
 
-    public synchronized void requestWithSomeHttpHeaders() {
+    public void requestWithSomeHttpHeaders() {
         String url = "http://covidhelpr-env.eba-anxf3q8x.us-west-1.elasticbeanstalk.com/db/volunteers";
-
+        Log.w("NOTIFY", "REQUEST STARTED");
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>()
                 {
                     @Override
                     public void onResponse(String response) {
-                        // response
                         Log.d("Response TO AWS", response);
                         try {
                             JSONObject json = new JSONObject(response);
                             Iterator<String> keys = json.keys();
                             while (keys.hasNext()) {
                                 String key = keys.next();
-                                /*
-                                if (json.get(key) instanceof JSONObject) {
-                                    JSONObject values = (JSONObject)(json.get(key));
-                                    orders.add(new Order("", "", values.toString(), "", "", "", ""));
-                                }
-                                 */
                                 orders.add(new Order("", "", json.get(key).toString(), "", "", "", ""));
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+                        synchronized (ordersLock){
+                            ordersLock.notify();
+                        }
                     }
                 },
-                new Response.ErrorListener()
-                {
+                new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
                         Log.d("ERROR","error => "+error.toString());
                     }
                 }
@@ -416,37 +441,3 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
-/*
-class AWSRequest extends Request<T> {
-
-    private final Listener<T> listener;
-    private final Map<String, String> headers;
-
-    public AWSRequest(int method, String url, @Nullable Response.ErrorListener listener, Listener<T> listener1, Map<String, String> headers) {
-        super(method, url, listener);
-        this.listener = listener1;
-        this.headers = headers;
-    }
-
-    @Override
-    protected Response<T> parseNetworkResponse(
-            NetworkResponse response) {
-        try {
-            String json = new String(response.data,
-                    HttpHeaderParser.parseCharset(response.headers));
-            return Response.success(gson.fromJson(json, clazz),
-                    HttpHeaderParser.parseCacheHeaders(response));
-
-        } catch(Exception e){
-
-        }
-        // handle errors
-// ...
-    }
-
-    @Override
-    protected void deliverResponse(T response) {
-        listener.onResponse(response);
-    }
-}
- */
