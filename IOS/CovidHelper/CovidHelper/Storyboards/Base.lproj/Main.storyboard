@@ -249,7 +249,7 @@
                                     </constraints>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mz-KH-GUK">
-                                    <rect key="frame" x="24" y="-11" width="34" height="30"/>
+                                    <rect key="frame" x="22" y="0.0" width="34" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Back"/>
                                     <connections>
@@ -647,58 +647,64 @@
         <scene sceneID="TRk-6u-7qc">
             <objects>
                 <viewController id="EKu-VT-TYG" userLabel="Payment" customClass="PaymentViewController" customModule="CovidHelper" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KJy-hz-sw0">
+                    <view key="view" contentMode="scaleToFill" id="Luq-jL-uCl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Your Credit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVN-7M-7Ly">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Your Credit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbG-oE-9BH">
                                 <rect key="frame" x="12" y="32" width="351" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1J-vA-2n6">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xot-f0-JpV" customClass="STPPaymentCardTextField">
                                 <rect key="frame" x="12" y="70" width="351" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="cFt-08-jp1"/>
+                                    <constraint firstAttribute="height" constant="52" id="ahH-co-fPZ"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="powered_stripe" translatesAutoresizingMaskIntoConstraints="NO" id="hbg-IZ-hyb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="powered_stripe" translatesAutoresizingMaskIntoConstraints="NO" id="Ta8-pw-4KT">
                                 <rect key="frame" x="227" y="130" width="132" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="8yw-MT-L2M"/>
-                                    <constraint firstAttribute="width" constant="132" id="u9q-Uv-Rzm"/>
+                                    <constraint firstAttribute="width" constant="132" id="hxW-lf-vmR"/>
+                                    <constraint firstAttribute="height" constant="28" id="vFW-2b-1i8"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkI-4N-uE7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46i-hb-h5y">
                                 <rect key="frame" x="16" y="587" width="343" height="44"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.85882352939999995" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="to3-Yv-ugY"/>
+                                    <constraint firstAttribute="height" constant="44" id="hML-2D-V2n"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="PLACE ORDER NOW">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="placeOrder" destination="EKu-VT-TYG" eventType="touchUpInside" id="4Su-mc-7hm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8vB-VM-HeG" firstAttribute="trailing" secondItem="xkI-4N-uE7" secondAttribute="trailing" constant="16" id="6Ja-pY-Cxl"/>
-                            <constraint firstItem="hbg-IZ-hyb" firstAttribute="top" secondItem="R1J-vA-2n6" secondAttribute="bottom" constant="8" id="6gg-Ml-FUG"/>
-                            <constraint firstItem="mVN-7M-7Ly" firstAttribute="top" secondItem="8vB-VM-HeG" secondAttribute="top" constant="32" id="9nG-rd-Wef"/>
-                            <constraint firstItem="8vB-VM-HeG" firstAttribute="trailing" secondItem="mVN-7M-7Ly" secondAttribute="trailing" constant="12" id="CWM-Sf-3kh"/>
-                            <constraint firstItem="mVN-7M-7Ly" firstAttribute="leading" secondItem="8vB-VM-HeG" secondAttribute="leading" constant="12" id="Lbv-Gc-hNx"/>
-                            <constraint firstItem="xkI-4N-uE7" firstAttribute="leading" secondItem="8vB-VM-HeG" secondAttribute="leading" constant="16" id="T4E-E0-Qpl"/>
-                            <constraint firstItem="8vB-VM-HeG" firstAttribute="trailing" secondItem="R1J-vA-2n6" secondAttribute="trailing" constant="12" id="bSy-YT-cWN"/>
-                            <constraint firstItem="8vB-VM-HeG" firstAttribute="bottom" secondItem="xkI-4N-uE7" secondAttribute="bottom" constant="16" id="jLF-su-osa"/>
-                            <constraint firstItem="8vB-VM-HeG" firstAttribute="trailing" secondItem="hbg-IZ-hyb" secondAttribute="trailing" constant="16" id="lDi-Vp-3Gn"/>
-                            <constraint firstItem="R1J-vA-2n6" firstAttribute="top" secondItem="mVN-7M-7Ly" secondAttribute="bottom" constant="16" id="lgl-Zp-dkz"/>
-                            <constraint firstItem="R1J-vA-2n6" firstAttribute="leading" secondItem="8vB-VM-HeG" secondAttribute="leading" constant="12" id="z4u-0s-ptC"/>
+                            <constraint firstItem="LAP-ZS-eyI" firstAttribute="trailing" secondItem="TbG-oE-9BH" secondAttribute="trailing" constant="12" id="GW1-ci-YRQ"/>
+                            <constraint firstItem="LAP-ZS-eyI" firstAttribute="trailing" secondItem="Ta8-pw-4KT" secondAttribute="trailing" constant="16" id="Ih7-a0-QIO"/>
+                            <constraint firstItem="LAP-ZS-eyI" firstAttribute="trailing" secondItem="Xot-f0-JpV" secondAttribute="trailing" constant="12" id="NGf-7u-yfm"/>
+                            <constraint firstItem="TbG-oE-9BH" firstAttribute="top" secondItem="LAP-ZS-eyI" secondAttribute="top" constant="32" id="QcC-vP-mee"/>
+                            <constraint firstItem="Ta8-pw-4KT" firstAttribute="top" secondItem="Xot-f0-JpV" secondAttribute="bottom" constant="8" id="RJ7-F9-pkg"/>
+                            <constraint firstItem="LAP-ZS-eyI" firstAttribute="trailing" secondItem="46i-hb-h5y" secondAttribute="trailing" constant="16" id="RtU-oR-f4M"/>
+                            <constraint firstItem="LAP-ZS-eyI" firstAttribute="bottom" secondItem="46i-hb-h5y" secondAttribute="bottom" constant="16" id="UbI-hm-k2k"/>
+                            <constraint firstItem="46i-hb-h5y" firstAttribute="leading" secondItem="LAP-ZS-eyI" secondAttribute="leading" constant="16" id="Wx3-Ot-fU1"/>
+                            <constraint firstItem="Xot-f0-JpV" firstAttribute="leading" secondItem="LAP-ZS-eyI" secondAttribute="leading" constant="12" id="Yp6-UV-ekO"/>
+                            <constraint firstItem="TbG-oE-9BH" firstAttribute="leading" secondItem="LAP-ZS-eyI" secondAttribute="leading" constant="12" id="i0r-UT-jLV"/>
+                            <constraint firstItem="Xot-f0-JpV" firstAttribute="top" secondItem="TbG-oE-9BH" secondAttribute="bottom" constant="16" id="qIN-FO-WLP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="8vB-VM-HeG"/>
+                        <viewLayoutGuide key="safeArea" id="LAP-ZS-eyI"/>
                     </view>
                     <navigationItem key="navigationItem" id="FH8-WS-OnR"/>
+                    <connections>
+                        <outlet property="cardTextField" destination="Xot-f0-JpV" id="AwA-Kr-Vkp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVx-8K-yPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -796,10 +802,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="containerView" destination="tia-AY-ham" id="EWe-aO-5AG"/>
-                        <outlet property="mapView" destination="W1i-fk-wud" id="5UJ-fG-VeL"/>
+                        <outlet property="mapView" destination="W1i-fk-wud" id="mJ5-5w-V2v"/>
                         <outlet property="orderStatusLabel" destination="GKn-o4-6nH" id="c7W-He-VWf"/>
                         <outlet property="progressBarView" destination="Dwm-Uw-CFv" id="pE7-aY-kXc"/>
-                        <outlet property="restaurantLabel" destination="8Os-qu-aOr" id="VM1-as-RVM"/>
+                        <outlet property="storeLabel" destination="8Os-qu-aOr" id="EHl-Bc-NWP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gj5-tG-07j" userLabel="First Responder" sceneMemberID="firstResponder"/>

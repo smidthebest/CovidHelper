@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import Firebase
 
-class Order {
+class Orders {
     // 1. properties
     // Stripe give token each transaction
     var stripeToken: String?

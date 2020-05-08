@@ -53,7 +53,7 @@ class APIManager
         
         // send post request to backend
         let url = self.baseURL.appendingPathComponent("createorder")
-        let newOrder = Order(stripeToken: stripeToken, storeId: Cart.currentCart.store!.id!, orderDetails: cartItemsJSONArray, address: Cart.currentCart.address!)
+        let newOrder = Orders(stripeToken: stripeToken, storeId: Cart.currentCart.store!.id!, orderDetails: cartItemsJSONArray, address: Cart.currentCart.address!)
         // For firebase
         newOrder.create()
         

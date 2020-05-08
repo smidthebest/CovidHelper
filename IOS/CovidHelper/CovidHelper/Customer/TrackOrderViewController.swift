@@ -23,7 +23,7 @@ class TrackOrderViewController : UIViewController
 
     
     var orderDetails = [JSON]()
-    var order: Order!
+    var order: Orders!
     
     
     
@@ -43,10 +43,10 @@ class TrackOrderViewController : UIViewController
     
     func getLatestOrder()
     {
-        Order.getLatestOrder { (json) in
+        Orders.getLatestOrder { (json) in
             DispatchQueue.main.async {
               
-                let latestOrder = Order(json: json)
+                let latestOrder = Orders(json: json)
                 
                 let storeAddress = json["store"]["address"].string!
                 let shippingAddress = json["address"].string!

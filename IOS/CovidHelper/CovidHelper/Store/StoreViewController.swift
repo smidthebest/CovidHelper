@@ -12,7 +12,7 @@ class StoreListingTableViewController: UITableViewController {
     
     @IBOutlet weak var SearchBar: UISearchBar!
     
-    // empty array of stores
+    // an empty array of stores
     
     var stores = [Store]()
     
