@@ -1,5 +1,8 @@
 API/node_modules
+API/package-lock.json
 API/info/covidhelper-45bda-firebase-adminsdk-4ssgh-8cd4cdeb33.json
 ANDROID/CovidHelper/app/google-services.json
 IOS/CovidHelper/CovidHelper/GoogleService-Info.plist
 /covid-helper.zip
+WEB/package-lock.json
+WEB/node_modules

@@ -22,7 +22,8 @@ module.exports.getAll = function(req, res){
  */
 module.exports.getDoc = function(req, res){
     con.getDoc(data, req.params.dbName, req.params.docId).then((dict) =>{
-        res.json(dict); 
+       if(!dict) res.json("false"); 
+        else res.json(dict); 
     })
     .catch((err) =>{
         console.log(err); 

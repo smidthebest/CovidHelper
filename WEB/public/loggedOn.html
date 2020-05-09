@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    </header>
+    <body>
+
+
+
+         <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+         <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
+        <script>
+            var firebaseConfig = {
+                    apiKey: "AIzaSyBguBxK-qLioUxoGdlyce-ocni_rRziKJ8",
+                    authDomain: "covidhelper-45bda.firebaseapp.com",
+                    databaseURL: "https://covidhelper-45bda.firebaseio.com",
+                    projectId: "covidhelper-45bda",
+                    storageBucket: "covidhelper-45bda.appspot.com",
+                    messagingSenderId: "662356953582",
+                    appId: "1:662356953582:web:827252f17ff0b7ec05a6ff"
+                };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+                
+        </script>
+        <script>
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    var name, email, photoUrl, uid, emailVerified;
+                    name = user.displayName;
+                    email = user.email;
+                    photoUrl = user.photoURL;
+                    emailVerified = user.emailVerified;
+                    uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                                    // this value to authenticate with your backend server, if
+                                    // you have one. Use User.getToken() instead.
+                    console.log(name + " " + email +   " " + uid); 
+                    $.ajax({
+                        type:"GET", 
+                        url: "http://covidhelpr-env.eba-anxf3q8x.us-west-1.elasticbeanstalk.com/doc/volunteers/" + email, 
+                        dataType: "json", 
+                        headers:{
+                            'access-control-allow-origin': "*", 
+                            'authorization': "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlltSUc4YWNmTkV0c1hPT0FwY05qdSJ9.eyJpc3MiOiJodHRwczovL2Rldi1kOTc4YjRxMy5hdXRoMC5jb20vIiwic3ViIjoidDJRWXNQM01aQTRyc2FzbmlNMTN4MlZWRm1CalNmODRAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjgwODEiLCJpYXQiOjE1ODg5MjE2NzUsImV4cCI6MTU4OTAwODA3NSwiYXpwIjoidDJRWXNQM01aQTRyc2FzbmlNMTN4MlZWRm1CalNmODQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.CaqVIpLRGHR39o76GXgkWNvlkzl7eqXT80DJAs9WLcATS1KWahtQiSxCHyx5h87z4MkgNb3UWxHMFbx7ruHmA6wlLOYAh79penPrez2G3JTUUsnI2LRwEQamhBD0Ugd6qTjaUQUoE7ZX0yLUILLUxCJxE1GTE_X3Y4izyqVuSlr_tfuGonBbpnm4O2AK6FMS28czp5dIGFquuSGqjXKl9gIguz6nHVtswoBM4QgrdNfWK7fy4fq_gvfDYdX9_TRUCJkYBdLML_vjpUn6Jox6GCT5PylC0HNUMZ5ph0M57cdQhVzt5ncHdJz_T5fPvw2hfCOk0UbMar4VpK5-scQTzA"
+                        }, 
+                        success: function(response){
+                            console.log(response); 
+                        }
+                    }); 
+                    
+                } else {
+                    // No user is signed in.
+                }
+            });
+        </script>
+    </body>
+</html>
